@@ -88,19 +88,18 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html,
+body,
+body > div,
+.full-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.full-section {
+    min-height: 100vh;
+}
 
 
 
