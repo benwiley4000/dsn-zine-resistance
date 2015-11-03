@@ -104,8 +104,81 @@ body > div,
     padding: 0;
 }
 
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
 .full-section {
     min-height: 100vh;
+}
+
+.full-section-exact {
+    height: 100vh;
+}
+
+.front-cover {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.front-cover-title {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    margin-top: 4%;
+    margin-left: 6%;
+}
+
+.front-cover-title h1,
+.front-cover-title h2 {
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+.front-cover-title h1 {
+    text-transform: uppercase;
+}
+
+.front-cover-title h2 {
+    text-transform: lowercase;
+}
+
+.front-cover-image {
+    width: 96%;
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    background-image: url(../img/ant-tunnel-invert-crop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-bottom: 20px;
+}
+
+.zine-title {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
 }
 
 
