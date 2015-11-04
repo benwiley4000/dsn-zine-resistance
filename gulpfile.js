@@ -14,6 +14,8 @@ var runSequence = require('run-sequence');
 var pkg = require('./package.json');
 var dirs = pkg['h5bp-configs'].directories;
 
+var responsive = require('gulp-responsive-images');
+
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
 // ---------------------------------------------------------------------
@@ -70,6 +72,7 @@ gulp.task('copy', [
     'copy:jquery',
     'copy:license',
     'copy:main.css',
+    'copy:images',
     'copy:misc',
     'copy:normalize'
 ]);
@@ -112,6 +115,67 @@ gulp.task('copy:main.css', function () {
                .pipe(gulp.dest(dirs.dist + '/css'));
 });
 
+gulp.task('copy:images', function () {
+    var qualityPref = 80;
+    var settingsArray = [
+        {
+            width: 600,
+            suffix: '-small_1x',
+            quality: qualityPref
+        },
+        {
+            width: 600 * 2,
+            suffix: '-small_2x',
+            quality: qualityPref
+        },
+        {
+            width: 1280,
+            suffix: '-medium_1x',
+            quality: qualityPref
+        },
+        {
+            width: 1280 * 2,
+            suffix: '-medium_2x',
+            quality: qualityPref
+        },
+        {
+            width: 1920,
+            suffix: '-large_1x',
+            quality: qualityPref
+        },
+        {
+            width: 1920 * 2,
+            suffix: '-large_2x',
+            quality: qualityPref
+        }
+    ];
+
+    gulp.src(dirs.src + '/img/*')
+        .pipe(responsive({
+            'look-over-here.jpg': settingsArray,
+            'on-sale.jpg': settingsArray,
+            'power-rose.jpg': [{
+                width: 200,
+                suffix: '_1x',
+                quality: qualityPref
+            }, {
+                width: 400 * 2,
+                suffix: '_2x',
+                quality: qualityPref
+            }],
+            'antz.jpg': [{
+                width: 640,
+                suffix: '_1x',
+                quality: qualityPref
+            }, {
+                width: 640 * 2,
+                suffix: '_2x',
+                quality: qualityPref
+            }]
+        }))
+        .pipe(gulp.dest(dirs.dist + '/img'));
+});
+
 gulp.task('copy:misc', function () {
     return gulp.src([
 
@@ -121,7 +185,8 @@ gulp.task('copy:misc', function () {
         // Exclude the following files
         // (other tasks will handle the copying of these files)
         '!' + dirs.src + '/css/main.css',
-        '!' + dirs.src + '/index.html'
+        '!' + dirs.src + '/index.html',
+        '!' + dirs.src + '/img/!(*@(.gitignore|ant-tunnel-invert-crop.svg))'
 
     ], {
 
