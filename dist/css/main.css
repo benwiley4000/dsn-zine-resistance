@@ -97,7 +97,7 @@ textarea {
 
 html,
 body,
-body > div,
+body > .page,
 .full-section {
     width: 100%;
     margin: 0;
@@ -116,6 +116,22 @@ h4,
 h5,
 h6 {
     font-weight: normal;
+}
+
+.page-number {
+    padding: 10px 20px;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    opacity: 0;
 }
 
 img,
