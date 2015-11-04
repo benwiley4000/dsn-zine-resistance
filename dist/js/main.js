@@ -17,7 +17,7 @@ $(function () {
         }
         var tolerance = Math.floor($(window).height() * 0.4);
         var currentPage = $('.page:in-viewport(' + tolerance + '):first')[0];
-        var currentPageNumber = pages.indexOf(currentPage.id) + 1;
+        var currentPageNumber = currentPage ? pages.indexOf(currentPage.id) + 1 : -1;
         if (currentPageNumber > 0) {
             $pageNumber.text(currentPageNumber + ' / ' + pageCount);
             $pageNumber.css('opacity', 1.0);
