@@ -116,7 +116,7 @@ gulp.task('copy:main.css', function () {
 });
 
 gulp.task('copy:images', function () {
-    var qualityPref = 80;
+    var qualityPref = 70;
     var settingsArray = [
         {
             width: 600,

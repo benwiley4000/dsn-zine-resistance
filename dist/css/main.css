@@ -134,8 +134,7 @@ h6 {
     opacity: 0;
 }
 
-img,
-.img {
+img {
     max-width: 100%;
     max-height: 100%;
 }
@@ -307,68 +306,6 @@ img,
 
 .power-rose {
     max-width: 200px;
-}
-
-.look-over-here {
-    background-image: url(../img/look-over-here-medium_1x.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.look-over-here-credit {
-    text-align: right;
-    padding-top: 5%;
-    padding-right: 15%;
-}
-
-.on-sale {
-    background-image: url(../img/on-sale-medium_1x.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.on-sale-top {
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-}
-
-.on-sale-bottom {
-    width: 100%;
-    -webkit-align-self: flex-end;
-    -ms-flex-item-align: end;
-    align-self: flex-end;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.on-sale-credit {
-    padding-left: 3%;
-    padding-bottom: 1%;
 }
 
 

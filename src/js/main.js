@@ -1,25 +1,5 @@
 $(function () {
 
-    var fitSection = function () {
-        var $element = $(this);
-        var img = new Image();
-        img.onload = function () {
-            var ratio = $element.width() / this.width;
-            var fitHeight = ratio * this.height;
-            $element.css('height', fitHeight);
-        };
-        img.src = $element.css('background-image').replace(/url\(|\)$|"/ig, '');
-    };
-
-    var $fittedSections = $('.fitted-section');
-    var fitSections = function () {
-        $fittedSections.each(fitSection);
-    };
-
-    // Fit section height to background image dimensions
-    fitSections();
-    $(window).resize(fitSections);
-
     var pages = $('.page').map(function () {
         return this.id;
     }).get();

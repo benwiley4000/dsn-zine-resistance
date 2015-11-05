@@ -126,8 +126,7 @@ h6 {
     opacity: 0;
 }
 
-img,
-.img {
+img {
     max-width: 100%;
     max-height: 100%;
 }
@@ -251,44 +250,6 @@ img,
 
 .power-rose {
     max-width: 200px;
-}
-
-.look-over-here {
-    background-image: url(../img/look-over-here-medium_1x.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.look-over-here-credit {
-    text-align: right;
-    padding-top: 5%;
-    padding-right: 15%;
-}
-
-.on-sale {
-    background-image: url(../img/on-sale-medium_1x.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.on-sale-top {
-    align-self: flex-start;
-}
-
-.on-sale-bottom {
-    width: 100%;
-    align-self: flex-end;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.on-sale-credit {
-    padding-left: 3%;
-    padding-bottom: 1%;
 }
 
 
