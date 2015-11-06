@@ -116,36 +116,46 @@ gulp.task('copy:main.css', function () {
 });
 
 gulp.task('copy:images', function () {
-    var qualityPref = 70;
+    var qualityPref = 75;
     var settingsArray = [
         {
-            width: 600,
+            width: 480,
             suffix: '-small_1x',
             quality: qualityPref
         },
         {
-            width: 600 * 2,
+            width: 480 * 2,
             suffix: '-small_2x',
             quality: qualityPref
         },
         {
-            width: 1280,
+            width: 800,
             suffix: '-medium_1x',
             quality: qualityPref
         },
         {
-            width: 1280 * 2,
+            width: 800 * 2,
             suffix: '-medium_2x',
             quality: qualityPref
         },
         {
-            width: 1920,
+            width: 1280,
             suffix: '-large_1x',
             quality: qualityPref
         },
         {
-            width: 1920 * 2,
+            width: 1280 * 2,
             suffix: '-large_2x',
+            quality: qualityPref
+        },
+        {
+            width: 1920,
+            suffix: '-xlarge_1x',
+            quality: qualityPref
+        },
+        {
+            width: 1920 * 2,
+            suffix: '-xlarge_2x',
             quality: qualityPref
         }
     ];

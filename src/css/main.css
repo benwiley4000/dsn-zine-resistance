@@ -111,6 +111,11 @@ h6 {
     font-weight: normal;
 }
 
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .page-number {
     padding: 10px 20px;
     font-size: 24px;
@@ -126,31 +131,54 @@ h6 {
     opacity: 0;
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;
+.controls-prompt {
+    font-family: sans-serif;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 15px;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.controls-prompt-text {
+    margin: 3px 5px;
+}
+
+.key {
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.space {
+    padding: 3px 30px 5px;
+}
+
+.arrow {
+    padding: 3px 10px 5px;
 }
 
 .full-section {
     min-height: 100vh;
 }
 
-.full-section-exact,
-.fitted-section {
+.full-section-exact {
     height: 100vh;
-}
-
-.fitted-section {
-    background-position: center;
-    /* this is overridden to match the proportional image
-     * height as soon as is possible
-     */
-    height:100vh;
 }
 
 .front-cover {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    background-image: url(../img/ant-tunnel-invert-crop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
 }
 
 .front-cover-title {
@@ -173,22 +201,12 @@ img {
     text-transform: lowercase;
 }
 
-.front-cover-image {
-    width: 96%;
-    align-self: flex-end;
-    flex-grow: 1;
-    background-image: url(../img/ant-tunnel-invert-crop.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
-    margin-bottom: 20px;
-}
-
 .zine-title {
     align-self: center;
     text-align: center;
     margin-left: 5%;
     margin-right: 5%;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 .content-container-single {
@@ -209,7 +227,7 @@ img {
     margin-left: 2.5%;
     margin-right: 2.5%;
     max-width: 640px;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
