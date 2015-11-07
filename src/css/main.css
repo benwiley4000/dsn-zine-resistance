@@ -90,7 +90,7 @@ textarea {
 
 html,
 body,
-body > .page,
+.page,
 .full-section {
     width: 100%;
     margin: 0;
@@ -214,7 +214,7 @@ img {
     margin-right: 5%;
 }
 
-.content-container-column {
+.column-content-container {
     margin-left: 2.5%;
     margin-right: 2.5%;
     display: flex;

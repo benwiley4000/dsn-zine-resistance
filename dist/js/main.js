@@ -45,14 +45,39 @@ $(function () {
 
     var heightPropertiesToCheck = ['height', 'min-height'];
 
+    var fetchCSSPropertyValueFromStylesheet = function (selector, property) {
+        for (var i = 0, sheetsLen = document.styleSheets.length; i < sheetsLen; i++) {
+            var sheet = document.styleSheets[i];
+            if (sheet.disabled || !sheet.cssRules || !sheet.cssRules.length) {
+                continue;
+            }
+            for (var j = 0, rulesLen = sheet.cssRules.length; j < rulesLen; j++) {
+                var rule = sheet.cssRules[j];
+                if (!rule.selectorText) {
+                    continue;
+                }
+                var selectorIndex = rule.selectorText.indexOf(selector);
+                if (selectorIndex === -1) {
+                    continue;
+                }
+                var charAfter = rule.selectorText.charAt(selectorIndex + selector.length);
+                if ((!charAfter || charAfter === ' ' || charAfter === ',') && rule.style[property]) {
+                    return rule.style[property];
+                }
+            }
+        }
+        return null;
+    };
+
     var updateContainerHeights = function () {
         containerTypesToUpdate.forEach(function (className) {
             var viewportHeight = $(window).height();
-            var $selected = $('.' + className);
+            var selector = '.' + className;
             heightPropertiesToCheck.forEach(function (property) {
                 // note: condition fails (as desired) if the value is 0.
-                if (parseInt($selected.css(property))) {
-                    $selected.each(function () {
+                if (parseInt(document.querySelector(selector).style[property]) ||
+                    parseInt(fetchCSSPropertyValueFromStylesheet(selector, property))) {
+                    $(selector).each(function () {
                         $(this).css(property, viewportHeight);
                     });
                 }
@@ -117,9 +142,9 @@ $(function () {
                     hashIndex = index - 1;
                 }
                 if (hashIndex > 0) {
-                    history.pushState(null, null, rootPath + '#' + hash);
+                    history.replaceState(null, null, rootPath + '#' + hash);
                 } else {
-                    history.pushState(null, null, rootPath);
+                    history.replaceState(null, null, rootPath);
                 }
 
                 changePageNumber(hashIndex + 1);
@@ -212,7 +237,6 @@ $(function () {
                 scrollTop: jumpYValue
             }, 600);
             changePageNumber(pageNumberLookupByOffset[jumpYValue]);
-            console.log(jumpYValue, jumpIndex, pageNumberLookupByOffset[jumpYValue]);
         }
     };
 
