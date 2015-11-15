@@ -45,7 +45,9 @@ $(function () {
 
     var heightPropertiesToCheck = ['height', 'min-height'];
 
+    // NOT A GOOD SOLUTION. FIX!!
     var fetchCSSPropertyValueFromStylesheet = function (selector, property) {
+        var lastValue = null;
         for (var i = 0, sheetsLen = document.styleSheets.length; i < sheetsLen; i++) {
             var sheet = document.styleSheets[i];
             if (sheet.disabled || !sheet.cssRules || !sheet.cssRules.length) {
@@ -62,11 +64,11 @@ $(function () {
                 }
                 var charAfter = rule.selectorText.charAt(selectorIndex + selector.length);
                 if ((!charAfter || charAfter === ' ' || charAfter === ',') && rule.style[property]) {
-                    return rule.style[property];
+                    lastValue = rule.style[property];
                 }
             }
         }
-        return null;
+        return lastValue;
     };
 
     var updateContainerHeights = function () {
