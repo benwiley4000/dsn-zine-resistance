@@ -175,10 +175,24 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+/* If there were a background-opacity property, there'd be no
+ * need for this pseudo-element.
+ */
+.front-cover::after {
+    opacity: 0.25;
+    content: '';
     background-image: url(../img/ant-tunnel-invert-crop.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .front-cover-title {
@@ -206,7 +220,6 @@ img {
     text-align: center;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: rgba(255, 255, 255, 0.75);
 }
 
 .content-container-single {
