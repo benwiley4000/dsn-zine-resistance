@@ -141,6 +141,7 @@ img {
     transform: translate(-50%, -50%);
     padding: 20px 15px;
     border-radius: 15px;
+    white-space: nowrap;
     opacity: 0;
     transition: opacity 0.5s;
 }
