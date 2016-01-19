@@ -117,7 +117,7 @@ gulp.task('copy:main.css', function () {
 
 gulp.task('copy:images', function () {
     var qualityPref = 75;
-    var settingsArray = [
+    var settingsArrayFull = [
         {
             width: 480,
             suffix: '-small_1x',
@@ -159,29 +159,44 @@ gulp.task('copy:images', function () {
             quality: qualityPref
         }
     ];
+    var settingsArray200 = [{
+        width: 200,
+        suffix: '_1x',
+        quality: qualityPref
+    }, {
+        width: 200 * 2,
+        suffix: '_2x',
+        quality: qualityPref
+    }];
+    var settingsArray640 = [{
+        width: 640,
+        suffix: '_1x',
+        quality: qualityPref
+    }, {
+        width: 640 * 2,
+        suffix: '_2x',
+        quality: qualityPref
+    }];
+    var settingsArray640Only1x = [{
+        width: 640,
+        suffix: '_1x',
+        quality: qualityPref
+    }];
 
     gulp.src(dirs.src + '/img/*')
         .pipe(responsive({
-            'look-over-here.jpg': settingsArray,
-            'on-sale.jpg': settingsArray,
-            'power-rose.jpg': [{
-                width: 200,
-                suffix: '_1x',
-                quality: qualityPref
-            }, {
-                width: 400 * 2,
-                suffix: '_2x',
-                quality: qualityPref
-            }],
-            'antz.jpg': [{
-                width: 640,
-                suffix: '_1x',
-                quality: qualityPref
-            }, {
-                width: 640 * 2,
-                suffix: '_2x',
-                quality: qualityPref
-            }]
+            'look-over-here.jpg': settingsArrayFull,
+            'on-sale.jpg': settingsArrayFull,
+            'power-rose.jpg': settingsArray200,
+            'antz.jpg': settingsArray640,
+            'darkmatter.jpg': settingsArray640Only1x,
+            'ellas-song.jpg': settingsArray640Only1x,
+            'get-equal.jpg': settingsArray640Only1x,
+            'king-kunta.jpg': settingsArray640Only1x,
+            'luke-nephew.jpg': settingsArray640Only1x,
+            'nelini-stamp.jpg': settingsArray640Only1x,
+            'rockaway-wildfire.jpg': settingsArray640Only1x,
+            'umi-selah.jpg': settingsArray640Only1x
         }))
         .pipe(gulp.dest(dirs.dist + '/img'));
 });
