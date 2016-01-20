@@ -98,10 +98,15 @@ textarea {
 html,
 body,
 .page,
-.full-section {
+.full-section,
+.background-image-wrapper {
     width: 100%;
     margin: 0;
     padding: 0;
+}
+
+.background-image-wrapper {
+    position: relative;
 }
 
 body {
@@ -342,6 +347,44 @@ img {
     max-width: 200px;
 }
 
+/* If there were a background-opacity property, there'd be no
+ * need for this pseudo-element.
+ */
+.micha-untitled::after {
+    opacity: 0.25;
+    content: '';
+    background-image: url(../img/diploma-large_1x.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.micha-untitled .byline-box {
+    text-align: left;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.micha-untitled .text-box {
+    text-align: center;
+    /* justify-content: flex-start; */
+}
+
+.footer-text {
+    text-align: center;
+}
 
 /* ==========================================================================
    Helper classes
