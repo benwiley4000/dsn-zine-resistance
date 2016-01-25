@@ -183,11 +183,12 @@ gulp.task('copy:images', function () {
         quality: qualityPref
     }];
 
-    gulp.src(dirs.src + '/img/*')
+    return gulp.src(dirs.src + '/img/*')
         .pipe(responsive({
             'look-over-here.jpg': settingsArrayFull,
             'on-sale.jpg': settingsArrayFull,
             'diploma.jpg': settingsArrayFull,
+            'bay.jpg': settingsArrayFull,
             'power-rose.jpg': settingsArray200,
             'antz.jpg': settingsArray640,
             'darkmatter.jpg': settingsArray640Only1x,

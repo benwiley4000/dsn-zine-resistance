@@ -135,6 +135,7 @@ img {
     bottom: 5%;
     transition: opacity 0.5s;
     opacity: 0;
+    z-index: 5;
 }
 
 .controls-prompt {
@@ -286,8 +287,35 @@ img {
     text-transform: uppercase;
 }
 
+.intro-contributors {
+    font-style: italic;
+}
+
 .power-rose {
     max-width: 200px;
+}
+
+/* If there were a background-opacity property, there'd be no
+ * need for this pseudo-element.
+ */
+.yin-interview::after {
+    opacity: 0.25;
+    content: '';
+    background-image: url(../img/bay-large_1x.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.yin-interview-intro {
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
 /* If there were a background-opacity property, there'd be no
