@@ -189,6 +189,7 @@ gulp.task('copy:images', function () {
             'on-sale.jpg': settingsArrayFull,
             'diploma.jpg': settingsArrayFull,
             'bay.jpg': settingsArrayFull,
+            'oil-runs-thicker-morgan.jpg': settingsArrayFull,
             'power-rose.jpg': settingsArray200,
             'antz.jpg': settingsArray640,
             'darkmatter.jpg': settingsArray640Only1x,
