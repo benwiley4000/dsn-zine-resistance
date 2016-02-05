@@ -185,11 +185,15 @@ gulp.task('copy:images', function () {
 
     return gulp.src(dirs.src + '/img/*')
         .pipe(responsive({
+            'resistencia-wallpaper.jpg': settingsArrayFull,
+            'madre-wallpaper.jpg': settingsArrayFull,
+            'thoughts-masters-house-p1.jpg': settingsArrayFull,
+            'thoughts-masters-house-p2.jpg': settingsArrayFull,
             'look-over-here.jpg': settingsArrayFull,
             'on-sale.jpg': settingsArrayFull,
             'diploma.jpg': settingsArrayFull,
             'bay.jpg': settingsArrayFull,
-            'oil-runs-thicker-morgan.jpg': settingsArrayFull,
+            'oil-runs-thicker-morgan.png': settingsArrayFull,
             'power-rose.jpg': settingsArray200,
             'antz.jpg': settingsArray640,
             'darkmatter.jpg': settingsArray640Only1x,
@@ -214,7 +218,7 @@ gulp.task('copy:misc', function () {
         // (other tasks will handle the copying of these files)
         '!' + dirs.src + '/css/main.css',
         '!' + dirs.src + '/index.html',
-        '!' + dirs.src + '/img/!(*@(.gitignore|ant-tunnel-invert-crop.svg))'
+        '!' + dirs.src + '/img/!(*@(.gitignore|ant-tunnel-invert-crop.svg|pipe-4.jpg))'
 
     ], {
 

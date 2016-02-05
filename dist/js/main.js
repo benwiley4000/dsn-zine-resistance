@@ -16,32 +16,46 @@ $(function () {
 
 
 
-    /* display prompt telling user how to control the page
-     * (unless we think we're on a mobile device)
-     */
-    var controlsPromptCleared = true;
-    var controlsPrompt = document.getElementById('controls-prompt');
-    // function will be called after initial jump points are found
-    var loadControlsPrompt = function () {
-        if (!isMobile) {
-            controlsPrompt.style.opacity = 1.0;
-            controlsPromptCleared = false;
-        }
-    };
-    $(window).scroll(function () {
-        if (!controlsPromptCleared) {
-            controlsPrompt.style.opacity = 0;
-            controlsPromptCleared = true;
-            setTimeout(function () {
-                controlsPrompt.style.display = 'none';
-            }, 1000);
-        }
-    });
+    var allowKeyNav = false;
+
+
+
+    if (allowKeyNav) {
+
+        /* display prompt telling user how to control the page
+         * (unless we think we're on a mobile device)
+         */
+        var controlsPromptCleared = true;
+        var controlsPrompt = document.getElementById('controls-prompt');
+        // function will be called after initial jump points are found
+        var loadControlsPrompt = function () {
+            if (!isMobile) {
+                controlsPrompt.style.opacity = 1.0;
+                controlsPromptCleared = false;
+            }
+        };
+        $(window).scroll(function () {
+            if (!controlsPromptCleared) {
+                controlsPrompt.style.opacity = 0;
+                controlsPromptCleared = true;
+                setTimeout(function () {
+                    controlsPrompt.style.display = 'none';
+                }, 1000);
+            }
+        });
+
+    }
 
 
 
 
-    var containerTypesToUpdate = ['full-section', 'full-section-exact', 'content-column'];
+    var containerTypesToUpdate = [
+        'full-section',
+        'full-section-exact',
+        'content-column'// ,
+        // 'column-content-container',
+        // 'page'
+    ];
 
     var heightPropertiesToCheck = ['height', 'min-height'];
 
@@ -202,7 +216,9 @@ $(function () {
         counter--;
         if (counter === 0) {
             generateJumpPoints();
-            loadControlsPrompt();
+            if (allowKeyNav) {
+                loadControlsPrompt();
+            }
         }
     };
     images.each(function() {
@@ -286,31 +302,35 @@ $(function () {
         return searchForClosestJumpIndex(currentYPosition, minInclusive, middleIndex);
     };
 
-    /* activate page jump when up or down key is pressed
-     * 38: up arrow, 40: down arrow, 32: space
-     */
-    var navDisabled = false;
-    $(window).keydown(function (e) {
-        if (!(e.which === 32 || e.which === 38 || e.which === 40)) {
-            return;
-        }
-        e.preventDefault();
-        if (navDisabled) {
-            return;
-        }
-        navDisabled = true;
+    if (allowKeyNav) {
 
-        var direction = null;
-        if (e.which === 38) {
-            direction = 'up';
-        } else {
-            direction = 'down';
-        }
-        jumpToClosestPage(direction);
-    });
-    $(window).keyup(function () {
-        navDisabled = false;
-    });
+        /* activate page jump when up or down key is pressed
+         * 38: up arrow, 40: down arrow, 32: space
+         */
+        var navDisabled = false;
+        $(window).keydown(function (e) {
+            if (!(e.which === 32 || e.which === 38 || e.which === 40)) {
+                return;
+            }
+            e.preventDefault();
+            if (navDisabled) {
+                return;
+            }
+            navDisabled = true;
+
+            var direction = null;
+            if (e.which === 38) {
+                direction = 'up';
+            } else {
+                direction = 'down';
+            }
+            jumpToClosestPage(direction);
+        });
+        $(window).keyup(function () {
+            navDisabled = false;
+        });
+
+    }
 
 
 

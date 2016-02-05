@@ -14,6 +14,11 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Playfair+Display'>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script>
+            // Picture element HTML5 shiv
+            document.createElement( "picture" );
+        </script>
+        <script src="https://cdn.rawgit.com/scottjehl/picturefill/master/dist/picturefill.min.js" async></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -43,7 +48,7 @@
         <hr>
 
         <div id="back-cover" class="back-cover page full-section">
-            <div class="column-content-container">
+            <div class="column-content-container separated-content-divs">
                 <div class="content-column back-cover-pt1">
                     <div class="content-div">
                         <div class="back-cover-head">
@@ -120,15 +125,14 @@
             </div>
         </div>
 
-        <hr>
-
         <div class="full-section carolina-poems">
             <div id="mother-tell-me" class="mother-tell-me page">
                 <div class="column-content-container">
                     <div class="content-column mother-tell-me-english">
                         <div class="content-div">
                             <h1 class="mother-tell-me-head">
-                                Mother, tell me a story.
+                                Mother, tell me<br>
+                                a story.
                             </h1>
                             <h3 class="byline">by Carolina Arias</h3>
                             <p>Tell me what los gringos said<br>
@@ -158,7 +162,8 @@
                     <div class="content-column mother-tell-me-spanish">
                         <div class="content-div">
                             <h1 class="mother-tell-me-head">
-                                Madre, cu&#233;ntame una historia.
+                                Madre, cu&#233;ntame<br>
+                                una historia.
                             </h1>
                             <p>Cu&#233;ntame lo que te dijeron los gringos<br>
                                 al ver tu cabello enredado<br>
@@ -191,6 +196,22 @@
 
             <div id="resistance" class="resistance page">
                 <div class="column-content-container">
+                    <div class="content-column resistance-english">
+                        <div class="content-div">
+                            <h1 class="resistance-head">Resistance</h1>
+                            <h3 class="byline">by Carolina Arias</h3>
+                            <p>Resistance tastes like dark chocolate,<br>
+                                bitter, strong, but sweetened<br>
+                                with the hope of a just victory.</p>
+                            <p>Resistance is the forest's song,<br>
+                                millions of furiously joyous voices<br>
+                                building a rhythm for the future.</p>
+                            <p>Resistance is a scratch on soft skin,<br>
+                                sharp nail against a white body<br>
+                                dependent on the shade.</p>
+                            <p>Resistance is freedom.</p>
+                        </div>
+                    </div>
                     <div class="content-column resistance-spanish">
                         <div class="content-div">
                             <h1 class="resistance-head">Resistencia</h1>
@@ -206,43 +227,121 @@
                             <p>Resistencia es libertad.</p>
                         </div>
                     </div>
-                    <div class="content-column resistance-english">
-                        <div class="content-div">
-                            <h1 class="resistance-head">Resistance</h1>
-                            <p>Resistance tastes like dark chocolate,<br>
-                                bitter, strong, but sweetened<br>
-                                with the hope of a just victory.</p>
-                            <p>Resistance is the forest's song,<br>
-                                millions of furiously joyous voices<br>
-                                building a rhythm for the future.</p>
-                            <p>Resistance is a scratch on soft skin,<br>
-                                sharp nail against a white body<br>
-                                dependent on the shade.</p>
-                            <p>Resistance is freedom.</p>
-                            <h3 class="byline">by Carolina Arias</h3>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
 
-        <hr>
+        <div class="full-section thoughts-masters-house">
+            <div id="thoughts-masters-house-p1" class="thoughts-masters-house-p1 page image-feature">
+                <picture>
+                    <source
+                            media="(min-width: 1281px)"
+                            srcset="img/thoughts-masters-house-p1-xlarge_1x.jpg 1x, img/thoughts-masters-house-p1-xlarge_2x.jpg 2x">
+                    <source
+                            media="(min-width: 801px)"
+                            srcset="img/thoughts-masters-house-p1-large_1x.jpg 1x, img/thoughts-masters-house-p1-large_2x.jpg 2x">
+                    <source
+                            media="(min-width: 481px)"
+                            srcset="img/thoughts-masters-house-p1-medium_1x.jpg 1x, img/thoughts-masters-house-p1-medium_2x.jpg 2x">
+                    <source
+                            media="(min-width: 400px)"
+                            srcset="img/thoughts-masters-house-p1-small_1x.jpg 1x, img/thoughts-masters-house-p1-small_2x.jpg 2x">
+                    <img
+                            src="img/thoughts-masters-house-p1-medium_1x.jpg"
+                            alt="Thoughts on inheriting and resisting - The Master's House -C.D.
 
-        <!--div class="thoughts-masters-house full-section">
-            <div id="thoughts-masters-house-pt1">
-                <div></div>
-                <div></div>
+Excerpts from: Federici, Silvia. Caliban and the Witch. New York: Autonomedia, 2004. Print.
+
+Excerpt:
+
+The criminalization of women's control over procreation is a phenomenon whose importance cannot be overemphasized, both from the viewpoint or its effect on women and its consequences for the capitalist organization of work. As is well documented through the Middle Ages women had possessed many means of contraception, mostly consisting of herbs which turned into potions and 'pessaries' (suppositories) were used to quicken a woman's period, provoke an abortion, or create a condition of sterility.
+
+Thoughts:
+
+Since committing myself to the fight for climate justice. My parents have been going through divorce. I can't seem to separate their relationship-and the power dynamics operating within it - from the inherited structures and institutions I am resisting in hopes for a more just world.
+
+Excerpt:
+
+In Eve's herbs: A History of contraception in the West (1997), the American historian John Riddle has given us an extensive catalogue of the substances that were most used and the effects expected of them or most likely to occur. The criminalization of contraception expropriated women from this knowledge that had been transmitted from generation to gene ration, giving them some autonomy with respect to child-birth.
+
+Thoughts:
+
+Memory: My dad beckoning my mom with his finger, making disgusting kissing noises and pleading with her to 'Give him some sugar.' She refuses. He approaches her, puts his hands on her and does not leave her alone until she gives him a kiss. I say nothing.
+
+Excerpt:
+
+It appears that, in some cases, this knowledge was not lost but was only driven underground; yet when birth control again made its appearance on the social scene, contraceptive methods were no longer of the type that women could use, but were specifically created for use by men.
+
+Thoughts:
+
+Years Later, I marvel at how I never questioned the power dynamics in my parents' relationship. My dad was the tyrant of the house and I learned how to be a chameleon under his reign. I kept quiet or slipped away to my room even as he treated my mom like a doormat.
+
+Excerpt:
+
+What demographic consequences followed from this shift is a question that for the moment I will not pursue, though I refer to Riddle's work for a discussion of this matter. Here I only want to stress that by denying women control over their bodies, the state deprived them of the most fundamental condition for physical and psychological integrity and degraded maternity to the status of forced labor, in addition to confining women to reproductive work in a way unknown in previous societies.">
+                </picture>
             </div>
-            <div id="thoughts-masters-house-pt2">
-                <div></div>
-                <div></div>
+            <div id="thoughts-masters-house-p2" class="thoughts-masters-house-p2 page image-feature">
+                <picture>
+                    <source
+                            media="(min-width: 1281px)"
+                            srcset="img/thoughts-masters-house-p2-xlarge_1x.jpg 1x, img/thoughts-masters-house-p2-xlarge_2x.jpg 2x">
+                    <source
+                            media="(min-width: 801px)"
+                            srcset="img/thoughts-masters-house-p2-large_1x.jpg 1x, img/thoughts-masters-house-p2-large_2x.jpg 2x">
+                    <source
+                            media="(min-width: 481px)"
+                            srcset="img/thoughts-masters-house-p2-medium_1x.jpg 1x, img/thoughts-masters-house-p2-medium_2x.jpg 2x">
+                    <source
+                            media="(min-width: 400px)"
+                            srcset="img/thoughts-masters-house-p2-small_1x.jpg 1x, img/thoughts-masters-house-p2-small_2x.jpg 2x">
+                    <img
+                            src="img/thoughts-masters-house-p2-medium_1x.jpg"
+                    alt="Thoughts:
+
+Memory: I am 18, and I tell my mom that I have gotten an intra-uterine device and that I am not sorry for not asking her, and dad because it is my body and I know they would have said no. My mom is quiet and I think I can see the familiar argentine catholicism tightening her lips, but she tells me that she and my dad had never used family planning. I ask her if she had wanted kids. She says no.
+
+Excerpt
+
+Looking at these phenomena from the vantage point of the present, after four centuries of capitalist disciplining of women, the answers may seem to impose themselves.
+
+Thoughts:
+
+I had a happy and privileged childhood. But I have realized that my house growing up felt like a literal version of 'The Master's House' - the term coined by Audre Lorde which refers to the interconnected systems of oppression-governed by the same capitalistic white supremacist and patriarchal rules. My mom, an immigrant woman with darker skin, suffered and resisted the most in this house.
+
+Excerpt:
+
+Though women's waged word, house work, and (paid) sexual work are still studied often in isolation from each other, we are now in a better position to see that the discrimination that women have suffered in the waged work-force has been directly rooted in their function as unpaid laborers in the home.
+
+Thoughts:
+
+Now I fight for divestment from within Yale's version of the Master's House (which deliberately emulate plantation houses from the old south) It's scary to realize that the systems in which I have always lived, loved and been inculcated actively depend - and have always depended - on violence and exploitation of most people. How do I resist all of these systems which have been so historically ordained?
+
+Excerpt:
+
+We can thus connect the banning of prostitution and the expulsion of women from the organized workplace with the creation of the housewife and the reconstruction of the family as the locus for the production of labor-power...' 'Soon all female work if done in the home, was defined as 'housekeeping', and even when done outside the home it was paid less than men's work, and never enough for women to be able to live by it.
+
+Thoughts:
+
+My mom left my dad this past summer. She left a note. My dad didn't see it coming. After thirty years of treating my mom like shit he realizes how lucky he was.  My mom has broken away from a long historical lineage of female subordination and oppression.
+
+Excerpt:
+
+Marriage was now seen as a woman's true career and women's inability to support themselves was taken so much for granted, that when a single woman tried to settle in a village, she was driven away even if she earned a wage. Combined with land dispossession, this loss of power with regard to wage employment led to the massification of prostitution.
+
+Thoughts:
+
+My dad has since stopped drinking. He started running and doing yoga. What? yes. He says he wants to transition into living 'leading with the heart' now. While I am not still convinced he sees my mom as a real person yet, I have never been so disoriented by-or close with-my dad.
+
+My mom's resistance and my dad's heart give me strength, clarity and hope to ask the big questions. How do we make a just transition into a new economy, a new world, with the work of love and not violence how do I reconcile my love for my dad with my anger at the master's house?">
+                </picture>
             </div>
-        </div-->
+        </div>
 
         <div class="background-image-wrapper">
             <div class="full-section yin-interview">
                 <div id="yin-interview-p1" class="yin-interview-p1 page">
-                    <div class="column-content-container">
+                    <div class="column-content-container separated-content-divs">
                         <div class="content-column">
                             <div class="content-div">
                                 <p class="yin-interview-intro">
@@ -403,7 +502,7 @@
 
         <div class="full-section abby-doodles">
             <div id="reverberations-p1" class="reverberations-p1 page">
-                <div class="column-content-container">
+                <div class="column-content-container separated-content-divs">
                     <div class="content-column">
                         <div class="content-div">
                             <h1 class="reverberations-head">Reverberations</h1>
@@ -432,7 +531,7 @@
             </div>
 
             <div id="reverberations-p2" class="reverberations-p2 page">
-                <div class="column-content-container">
+                <div class="column-content-container separated-content-divs">
                     <div class="content-column">
                         <div class="content-div get-equal">
                             <img src="img/get-equal_1x.jpg" alt="I am SOMEBODY and I deserve full equality right here RIGHT NOW.">
@@ -458,6 +557,10 @@
         </div>
 
         <div id="look-over-here" class="look-over-here page image-feature">
+            <div class="look-over-here-info">
+                “look over here”<br>
+                by Garrett Blad
+            </div>
             <picture>
                 <source
                         media="(min-width: 1281px)"
@@ -602,6 +705,9 @@
                         src="img/on-sale-small_1x.jpg"
                         alt="'On Sale' by Alexandra Griffin">
             </picture>
+            <div class="on-sale-info">
+                by Alexandra Griffin
+            </div>
         </div>
 
         <div class="last-section-and-footer wrapper background-image-wrapper">
@@ -612,25 +718,65 @@
                         <picture>
                             <source
                                     media="(min-width: 1281px)"
-                                    srcset="img/oil-runs-thicker-morgan-xlarge_1x.jpg 1x, img/oil-runs-thicker-morgan-xlarge_2x.jpg 2x">
+                                    srcset="img/oil-runs-thicker-morgan-xlarge_1x.png 1x, img/oil-runs-thicker-morgan-xlarge_2x.png 2x">
                             <source
                                     media="(min-width: 801px)"
-                                    srcset="img/oil-runs-thicker-morgan-large_1x.jpg 1x, img/oil-runs-thicker-morgan-large_2x.jpg 2x">
+                                    srcset="img/oil-runs-thicker-morgan-large_1x.png 1x, img/oil-runs-thicker-morgan-large_2x.png 2x">
                             <source
                                     media="(min-width: 481px)"
-                                    srcset="img/oil-runs-thicker-morgan-medium_1x.jpg 1x, img/oil-runs-thicker-morgan-medium_2x.jpg 2x">
+                                    srcset="img/oil-runs-thicker-morgan-medium_1x.png 1x, img/oil-runs-thicker-morgan-medium_2x.png 2x">
                             <source
                                     media="(min-width: 400px)"
-                                    srcset="img/oil-runs-thicker-morgan-small_1x.jpg 1x, img/oil-runs-thicker-morgan-small_2x.jpg 2x">
+                                    srcset="img/oil-runs-thicker-morgan-small_1x.png 1x, img/oil-runs-thicker-morgan-small_2x.png 2x">
                             <img
-                                    src="img/oil-runs-thicker-morgan-small_1x.jpg"
+                                    src="img/oil-runs-thicker-morgan-small_1x.png"
                                     alt="'Oil Runs Thicker' by Morgan Curtis">
                         </picture>
                     </div>
                     <div class="column-content-container">
                         <div class="content-column">
                             <div class="content-div">
-
+                                <p>“What is your purpose for visiting Canada?” the border officer had queried on the far side of the arching bridge from Lubec, Maine to Campobello Island, New Brunswick. “We’re on this bicycle tour,” I responded, squirming within my signposted responsibility to answer fully and accurately to all required questions. “I wonder what we should have said,” Garrett pondered, as we pedaled away. “That we are here to dismantle the white supremacist capitalist patriarchy?” I laughed.</p>
+                                <p>Crossing the Courtenay Bay Causeway in Saint John, New Brunswick the following day the largest oil refinery in Canada loomed to our left, while tanker ships, oil trains and a selection of million-gallon tanks were sat along the sedated shoreline to our right. The blue lettering on each tank read Irving, our first glimpse of a family name that would haunt our coming days. The lettering on my bike jersey reminded me to keep pedalling for the planet. I took a wide right turn onto Bayside Drive and shivered to pass a sign denoting Irving Industrial Security. I felt watched.</p>
+                            </div>
+                        </div>
+                        <div class="content-column">
+                            <div class="content-div">
+                                <p>“One in seven New Brunswickers work for Irving,” Lynaya filled us in as we drove back along the coast towards the city from her home on Red Head Road, opposite Transcanada’s chosen terminus for Energy East, the largest oil pipeline to ever be proposed in North America. “My brothers-in-law do. They have to sign contracts that they won’t speak or act against the interest of the corporation. I know other activists whose family won’t be seen with them for fear of losing their jobs.” The dense industrial infrastructure was speeding past us now. High locked gates. Blinking lights on assorted towers. Oversized machinery. An unlikely deer inside a chainlink fence, resilient behind an array of warning signs.</p>
+                                <p>I couldn’t quite manage a smile as the camera flashed. I was holding a sign reading, simply, 47. The number of people killed in the Lac Megantic oil train explosion in Quebec. On the disaster’s two year anniversary Lynaya had gathered the small community willing to speak the necessary truth. We were still in our damp bike shorts, stood amongst retirees, Red Head homeowners, a businessman or two, as well as a documentary film crew, also recently arrived in Saint John to listen to frontline stories of fossil fuel resistance for their upcoming film Directly Affected. In the background were oil trains, hundreds of carriages long, each carrying nearly 30,000 gallons of crude or, worse, diluted bitumen from the tar sands. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="oil-runs-thicker-p2" class="oil-runs-thicker-p2 page">
+                    <div class="column-content-container">
+                        <div class="content-column">
+                            <div class="content-div">
+                                <p>“I had a woman from Transcanada sitting at my kitchen table. The first thing she said to me coldly was ‘we are not interested in buying any more property.’ So I figured I would just have to stay here then.” Lynaya explained, when I asked how it was she came to be involved with all of this. “It was then that I started reading all about climate change and realized how much bigger this was than Red Head. I now think it was fate that put me here to fight this.” She kept her eye on the road, navigating her beloved hybrid car through downtown traffic. “I want to be able to look my two nieces in the eye in twenty years and tell them that I did absolutely everything I could.”</p>
+                                <p>The function room in the chain hotel was overly air conditioned, and the five filmmakers were sat facing the small audience. We watched a short version of their film: a story of the people impacted by Kinder Morgan's proposed Trans Mountain Pipeline expansion. The story of Energy East is to be added, hence their cameras greeting us as we pedaled into Lynaya’s driveway earlier that day. A man sitting in my row of plastic seats introduced himself. He lives off-grid, without a car, and had got a ride from a friend to attend the screening. He’s proposing a census boycott to deprive the provincial government of federal funding, hoping that resistance spoken in their language will finally be heard.</p>
+                            </div>
+                        </div>
+                        <div class="content-column">
+                            <div class="content-div">
+                                <p>“I’m a bladder cancer patient,” spoke up one woman. “My doctor tells me almost all bladder cancers are rooted in cadmium exposure from smoking cigarettes. My fellow patients and I… not one of us are smokers.” It’s a common story, we are told. Cancer rates in Saint John are multiples of ten above national averages. Research is stifled, and awareness is nil. The Irving empire owns every single newspaper and no community health survey has ever been completed. In Burnaby, the epicenter of resistance to the Trans Mountain pipeline, they have an area they call “cancer alley”, the filmmakers share. “Here we just call it Saint John,” another woman laughs. I shift uncomfortably in my chair.</p>
+                                <p>I get to talking to the man who lives at the tip of Anthony’s Cove Road, where Energy East would end. “I saw our house many years ago and swore that I would move there if it ever came for sale. It’s that beautiful of a spot. For me that’s what this fight is about. My house, my land. If you’re looking for an environmentalist, Lynaya is the one to talk to.”I ask about the seven-hundred person strong March to the End of the Line that happened along his road just six weeks before. “It was powerful. So important that First Nations people came. That war canoe sure got people’s attention.” The Telegraph Journal that day had said they would publish Lynaya’s opinion piece about the courageous and diverse resistance to the pipeline. Instead the Irving-owned newspaper printed a full-page ad from Transcanada offering pro-Energy East yard signs. “At least I haven’t seen a single yard with one,” she consoles herself. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="oil-runs-thicker-p3" class="oil-runs-thicker-p3 page">
+                    <div class="column-content-container">
+                        <div class="content-column">
+                            <div class="content-div">
+                                <p>Soon the seven of us travelling storytellers, both cyclists and filmmakers, were gathered for a late night meal in the home of Leticia, chair of the Saint John chapter of Council of Canadians. A refugee support coordinator, Leticia welcomed us with open arms, quesadillas and ginger beer. Conversation flowed from my question: What should we know about Canada? Hockey, oversized road art and Tim Hortons quickly passed over we dove into better understanding the regime of Prime Minister Stephen Harper. Expansion of the tar sands, fast tracking of pipelines, repealing of environmental safeguards, muzzling of scientists, tax breaks for the wealthiest industry on Earth... "When you look at the changes to law Prime Minister Harper has made in this country, it is really unsettling. Many people wonder, is this what Germany's descent into fascism felt like?" film director Zack said. "Politics are becoming very polarized; environmentalists and First Nations groups are being referred to as radicals and enemies of the state. New secret police powers have been enabled under bill C-51, all in an effort to extract more oil in the era of climate change.”</p>
+                                <p>I finally got to sleep that night on the same air mattress that Lynaya hosted organizers from 350.org on when they came for the march. “I never could have imagined meeting all of you incredible people before this,” she said. “I was a quiet person, not one to speak out. All of this came from me speaking at one neighbourhood meeting. I stood up and shared my concerns about the pipeline, and was amazed to hear that others felt the same. I now know we are all part of a global movement.”</p>
+                            </div>
+                        </div>
+                        <div class="content-column">
+                            <div class="content-div">
+                                <p>It was a grey day heavy with drizzle as we left Saint John. A large hole and various machinery had appeared in the field opposite Lynaya’s house overnight. As we headed back over the causeway we stopped to take pictures of the oil trains, again wearing our bike jerseys, again pedalling for the planet. Garrett’s guess was that it was illegal for us to be stood by the tracks with a camera, looking out to the cold bay with the refinery behind us. Warning: Crude Oil Pipeline signs dotted the stretch of grass we stood upon. Keep Out was the message of the gates and fence line. Another deer appeared from just beyond the border. She ran down the embankment and under the thundering bridge. Just behind her were two fawns, giddily leaping across the rail ties, playful amidst it all.</p>
                             </div>
                         </div>
                     </div>

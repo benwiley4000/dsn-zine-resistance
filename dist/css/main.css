@@ -127,6 +127,7 @@ img {
     width: 100%;
     max-width: 100%;
     max-height: 100%;
+    white-space: pre;
 }
 
 .page-number {
@@ -162,6 +163,7 @@ img {
     opacity: 0;
     -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
+    z-index: 5;
 }
 
 .controls-prompt-text {
@@ -196,6 +198,9 @@ img {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 
 .front-cover {
@@ -359,6 +364,28 @@ img {
     max-width: 200px;
 }
 
+.carolina-poems .content-div {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.3em;
+    margin: 1em;
+}
+
+.carolina-poems h1 {
+    margin-top: 0;
+}
+
+.mother-tell-me {
+    background-image: url(../img/madre-wallpaper-large_1x.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.resistance {
+    background-image: url(../img/resistencia-wallpaper-large_1x.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 /* If there were a background-opacity property, there'd be no
  * need for this pseudo-element.
  */
@@ -380,6 +407,16 @@ img {
 .yin-interview-intro {
     font-weight: bold;
     font-size: 1.1em;
+}
+
+.look-over-here {
+    position: relative;
+}
+
+.look-over-here-info {
+    position: absolute;
+    top: 7%;
+    right: 12%;
 }
 
 .trisha-untitled {
@@ -419,6 +456,39 @@ img {
 
 .micha-untitled .text-box {
     text-align: center;
+}
+
+.on-sale {
+    position: relative;
+}
+
+.on-sale-info {
+    color: white;
+    position: absolute;
+    bottom: 9%;
+    left: 9%;
+}
+
+/* If there were a background-opacity property, there'd be no
+ * need for this pseudo-element.
+ */
+.oil-runs-thicker::after {
+    opacity: 0.25;
+    content: '';
+    background-image: url(../img/pipe-4.jpg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.footer {
+    padding-top: 20px;
 }
 
 .footer-text {
@@ -518,18 +588,28 @@ img {
    Modify as content requires.
    ========================================================================== */
 
+@media only screen and (min-width: 500px) {
+    .front-cover-title {
+        font-size: 1.5em;
+    }
+}
+
 @media only screen and (min-width: 750px) {
+    .front-cover-title {
+        font-size: 2em;
+    }
+
     .full-section,
     .page:not(.image-feature) {
         min-height: 100vh;
     }
 
-    .column-content-container {
+    .column-content-container.separated-content-divs {
         min-height: 100vh;
     }
 
-    .content-column {
-        height: 100%;
+    .column-content-container.separated-content-divs .content-column {
+        min-height: 100vh;
      }
 
     .column-content-container {
@@ -538,6 +618,26 @@ img {
         -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .front-cover-title {
+        font-size: 2.5em;
+    }
+
+    .zine-title {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .front-cover-title {
+        font-size: 3em;
+    }
+
+    .zine-title {
+        font-size: 2em;
     }
 }
 
