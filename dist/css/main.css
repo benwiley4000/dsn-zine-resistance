@@ -319,7 +319,7 @@ img {
     max-height: 100%;
 }
 
-.back-cover-head {
+.formicidae-head {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -335,32 +335,32 @@ img {
     justify-content: flex-start;
 }
 
-.back-cover-head h1,
-.back-cover-head h2 {
+.formicidae-head h1,
+.formicidae-head h2 {
     margin: 0;
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
 }
 
-.back-cover-head h1 {
+.formicidae-head h1 {
     text-transform: uppercase;
 }
 
-.back-cover-head h2 {
+.formicidae-head h2 {
     font-style: italic;
     padding-left: 0.5em;
 }
 
-.back-cover-pt2 {
+.formicidae-pt2 {
     text-align: center;
 }
 
-.intro-head {
+.introduction-head {
     text-transform: uppercase;
 }
 
-.intro-contributors {
+.introduction-contributors {
     font-style: italic;
 }
 
