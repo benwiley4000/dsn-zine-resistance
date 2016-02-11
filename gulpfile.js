@@ -192,7 +192,7 @@ gulp.task('copy:images', function () {
             'look-over-here.jpg': settingsArrayFull,
             'on-sale.jpg': settingsArrayFull,
             'diploma.jpg': settingsArrayFull,
-            'bay.jpg': settingsArrayFull,
+            'bay-with-text-4.jpg': settingsArrayFull,
             'oil-runs-thicker-morgan.png': settingsArrayFull,
             'power-rose.jpg': settingsArray200,
             'antz.jpg': settingsArray640,
