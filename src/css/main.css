@@ -303,7 +303,7 @@ img {
 }
 
 .carolina-poems .content-div {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.75);
     padding: 1.3em;
     margin: 1em;
 }
@@ -441,10 +441,6 @@ img {
     padding: 0 1em;
 }
 
-.footer {
-    padding-top: 20px;
-}
-
 .footer-text {
     text-align: center;
 }
@@ -568,6 +564,18 @@ img {
 
     .column-content-container {
         flex-direction: row;
+    }
+
+    .resistance {
+        background-image: url(../img/resistencia-women-large_1x.png),
+                          url(../img/resistencia-wallpaper-large_1x.jpg);
+        background-size: contain, cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .resistance-women {
+        display: none;
     }
 }
 

@@ -187,6 +187,7 @@ gulp.task('copy:images', function () {
         .pipe(responsive({
             'resistencia-wallpaper.jpg': settingsArrayFull,
             'madre-wallpaper.jpg': settingsArrayFull,
+            'resistencia-women.png': settingsArrayFull,
             'thoughts-masters-house-p1.jpg': settingsArrayFull,
             'thoughts-masters-house-p2.jpg': settingsArrayFull,
             'look-over-here.jpg': settingsArrayFull,
