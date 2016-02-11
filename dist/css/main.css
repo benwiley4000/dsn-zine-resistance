@@ -95,6 +95,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 body,
 .page,
@@ -386,17 +390,20 @@ img {
     background-repeat: no-repeat;
 }
 
-.thoughts-masters-house-p1,
-.thoughts-masters-house-p2 {
+.thoughts-masters-house-body {
     max-width: 900px;
     margin: 1em auto;
+}
+
+.yin-interview {
+    padding: 2em;
 }
 
 /* If there were a background-opacity property, there'd be no
  * need for this pseudo-element.
  */
 .yin-interview::after {
-    opacity: 0.7;
+    /*opacity: 0.7; getting rid of the opacity rule, but leaving this in ::after just in case*/
     content: '';
     background-image: url(../img/bay-with-text-4-large_1x.jpg);
     background-size: cover;
@@ -415,8 +422,9 @@ img {
     font-size: 1.1em;
 }
 
-.yin-interview .content-div {
-    padding: 0 15px;
+.yin-interview-body {
+    max-width: 750px;
+    padding: 0 1em;
     background-color: rgba(255, 255, 255, 0.65);
 }
 
@@ -497,6 +505,12 @@ img {
     right: 0;
     position: absolute;
     z-index: -1;
+}
+
+.oil-runs-thicker-body {
+    max-width: 750px;
+    margin: 1em auto;
+    padding: 0 1em;
 }
 
 .footer {
