@@ -25,6 +25,40 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <div id="contents-menu-container" class="contents-menu-container">
+            <div id="contents-menu-icon" class="contents-menu-icon awaiting-click"></div>
+            <div id="contents-menu" class="contents-menu">
+                <h2 class="contents-menu-header">
+                    <span>Contents</span>
+                    <div id="share-icon" class="share-icon ready" title="Share">
+                        <img src="img/share-64-white.png">
+                    </div>
+                </h2>
+                <ul id="contents-list" class="contents-list"></ul>
+                <div class="home-page-link">
+                    <a href="http://studentsdivest.org/">Back to studentsdivest.org</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="share-window" class="share-window hidden">
+            <h3 class="share-window-header">Share this Zine with your friends!</h3>
+            <input id="share-window-url" class="share-window-url" type="text"/>
+            <div><label>
+                <input id="share-specific-page" type="checkbox"/>
+                Share the current page (<span class="share-page-name" id="share-window-page-name"></span>).
+            </label></div>
+            <div class="social-icons">
+                <a id="facebook-icon" class="social-icon facebook-icon" href="#" target="_blank" title="Share to Facebook">
+                    <img src="img/facebook-64-white.png" alt="Share to Facebook"/>
+                </a>
+                <a id="twitter-icon" class="social-icon twitter-icon" href="#" target="_blank" title="Share to Twitter">
+                    <img src="img/twitter-64-white.png" alt="Share to Twitter"/>
+                </a>
+            </div>
+            <p id="share-window-close" class="share-window-close">Close</p>
+        </div>
+
         <div id="page-number" class="page-number"></div>
 
         <div id="controls-prompt" class="controls-prompt">
@@ -36,7 +70,7 @@
         </div>
 
         <div class="background-image-wrapper">
-            <div id="front-cover" class="front-cover page full-section-exact">
+            <div id="front-cover" class="front-cover page full-section-exact" data-name="Front Cover">
                 <div class="front-cover-title">
                     <h2>Telling Stories of</h2>
                     <h1>Resistance</h1>
@@ -47,7 +81,7 @@
 
         <hr>
 
-        <div id="formicidae" class="formicidae page full-section">
+        <div id="formicidae" class="formicidae page full-section" data-name="Formicidae">
             <div class="column-content-container separated-content-divs">
                 <div class="content-column formicidae-pt1">
                     <div class="content-div">
@@ -83,7 +117,7 @@
 
         <hr>
 
-        <div id="introduction" class="introduction page full-section">
+        <div id="introduction" class="introduction page full-section" data-name="Intro/Credits">
             <div class="column-content-container">
                 <div class="content-column introduction-welcome">
                     <div class="content-div">
@@ -126,7 +160,7 @@
         </div>
 
         <div class="full-section carolina-poems">
-            <div id="mother-tell-me" class="mother-tell-me page">
+            <div id="mother-tell-me" class="mother-tell-me page" data-name="Mother, Tell Me a Story">
                 <div class="column-content-container">
                     <div class="content-column mother-tell-me-english">
                         <div class="content-div">
@@ -194,7 +228,7 @@
                 </div>
             </div>
 
-            <div id="resistance" class="resistance page" title="Zapatista Women, Ana Tijou X, Rigoberta Mench&#250;, Mirabel Sisters, Juana Azurduy">
+            <div id="resistance" class="resistance page" title="Zapatista Women, Ana Tijou X, Rigoberta Mench&#250;, Mirabel Sisters, Juana Azurduy" data-name="Resistance">
                 <div class="resistance-women">
                     <picture>
                         <source
@@ -244,7 +278,7 @@
             </div>
         </div>
 
-        <div id="thoughts-masters-house" class="full-section thoughts-masters-house page">
+        <div id="thoughts-masters-house" class="full-section thoughts-masters-house page" data-name="Thoughts on <i>Inheriting and Resisting the Master's House</i>">
             <div class="thoughts-masters-house-body">
                 <picture>
                     <source
@@ -350,7 +384,7 @@ My mom's resistance and my dad's heart give me strength, clarity and hope to ask
         </div>
 
         <div class="background-image-wrapper">
-            <div id="yin-interview" class="full-section yin-interview page">
+            <div id="yin-interview" class="full-section yin-interview page" data-name="Interview: Yin Htin">
                 <div class="yin-interview-body">
                     <p class="yin-interview-intro">
                         Yin Htin is a climate justice organizer with Fossil Free
@@ -473,7 +507,7 @@ My mom's resistance and my dad's heart give me strength, clarity and hope to ask
             </div>
         </div>
 
-        <div id="reverberations" class="full-section reverberations page">
+        <div id="reverberations" class="full-section reverberations page" data-name="Reverberations">
             <div class="column-content-container separated-content-divs">
                 <div class="content-column">
                     <div class="content-div">
@@ -524,7 +558,7 @@ My mom's resistance and my dad's heart give me strength, clarity and hope to ask
             </div>
         </div>
 
-        <div id="look-over-here" class="look-over-here page image-feature">
+        <div id="look-over-here" class="look-over-here page image-feature" data-name="look over here">
             <div class="look-over-here-info">
                 “look over here”<br>
                 by Garrett Blad
@@ -549,7 +583,7 @@ My mom's resistance and my dad's heart give me strength, clarity and hope to ask
         </div>
 
         <div class="full-section trisha-untitled">
-            <div id="trisha-untitled-pt1" class="trisha-untitled-p1 page">
+            <div id="trisha-untitled-pt1" class="trisha-untitled-p1 page" data-name="Untitled by Trisha Hautea">
                 <div class="column-content-container">
                     <div class="content-column">
                         <div class="content-div">
@@ -625,7 +659,7 @@ My mom's resistance and my dad's heart give me strength, clarity and hope to ask
         </div>
 
         <div class="background-image-wrapper">
-            <div id="micha-untitled" class="micha-untitled page full-section">
+            <div id="micha-untitled" class="micha-untitled page full-section" data-name="Untitled by Michaela Steiner">
                 <div class="column-content-container">
                     <div class="content-column text-box">
                         <div class="content-div">
@@ -655,7 +689,7 @@ My mom's resistance and my dad's heart give me strength, clarity and hope to ask
             </div>
         </div>
 
-        <div id="on-sale" class="on-sale page image-feature">
+        <div id="on-sale" class="on-sale page image-feature" data-name="On Sale">
             <picture>
                 <source
                         media="(min-width: 1281px)"
@@ -680,7 +714,7 @@ My mom's resistance and my dad's heart give me strength, clarity and hope to ask
 
         <div class="last-section-and-footer-wrapper background-image-wrapper">
 
-            <div id="oil-runs-thicker" class="full-section oil-runs-thicker page">
+            <div id="oil-runs-thicker" class="full-section oil-runs-thicker page" data-name="Oil Runs Thicker">
                 <div class="oil-runs-thicker-head">
                     <picture>
                         <source
@@ -732,13 +766,13 @@ My mom's resistance and my dad's heart give me strength, clarity and hope to ask
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
+        <!--script removed until we get around to setting up google analytics..>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='https://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
+        </script-->
     </body>
 </html>

@@ -1,5 +1,8 @@
 $(function () {
 
+
+
+
     /* Perhaps this isn't foolproof, but it should let
      * us know if we're on a mobile device.
      * http://stackoverflow.com/a/3540295/4956731
@@ -13,6 +16,7 @@ $(function () {
      * run them at the end of the script
      */
     var toRunOnResize = [];
+
 
 
 
@@ -131,17 +135,38 @@ $(function () {
 
     var pageNumberTimeout = null;
 
+    var disablePageNumberChange = false;
+
+    var listItems = []; // will be populated later on with content-list-item li elements
+
+    var markListItemAsNotCurrent = function (listItem) {
+        listItem.classList.remove('current');
+    };
+
+    var markAllListItemsAsNotCurrent = function () {
+        listItems.forEach(markListItemAsNotCurrent);
+    };
+
     var changePageNumber = function (pageNumber) {
-        if (parseInt($pageNumber.text().split(' / ')[0]) !== pageNumber) {
-            clearTimeout(pageNumberTimeout);
-            $pageNumber.text(pageNumber + ' / ' + pageCount);
-            if (parseInt($pageNumber.css('opacity')) !== 1) {
-                $pageNumber.css('opacity', 1.0);
-            }
-            pageNumberTimeout = setTimeout(function () {
-                $pageNumber.css('opacity', 0);
-            }, 1000);
+        if (disablePageNumberChange || parseInt($pageNumber.text().split(' / ')[0]) === pageNumber) {
+            return;
         }
+        clearTimeout(pageNumberTimeout);
+        $pageNumber.text(pageNumber + ' / ' + pageCount);
+        if (parseInt($pageNumber.css('opacity')) !== 1) {
+            $pageNumber.css('opacity', 1.0);
+        }
+        markAllListItemsAsNotCurrent();
+        var listItem = listItems[pageNumber - 1];
+        if (listItem) {
+            listItem.classList.add('current');
+        }
+        pageNumberTimeout = setTimeout(function () {
+            $pageNumber.css('opacity', 0);
+        }, 1000);
+
+        // function is defined further down the page
+        renderShareWindow();
     };
 
     /* change URL hash and display page number
@@ -173,6 +198,7 @@ $(function () {
 
     var jumpPoints = [];
     var pageNumberLookupByOffset = {};
+    var offsetLookupByPageId = {};
 
     var generateJumpPoints = function () {
         jumpPoints = [];
@@ -196,6 +222,7 @@ $(function () {
             lastOffset = newOffset;
             jumpPoints.push(lastOffset);
             pageNumberLookupByOffset[lastOffset] = index + 1;
+            offsetLookupByPageId[pageName] = lastOffset;
         });
         var pageEnd = Math.floor($(document).height());
         while ((lastOffset || lastOffset === 0) && pageEnd - lastOffset > viewportHeight) {
@@ -247,15 +274,47 @@ $(function () {
 
 
 
+    var jumpToOffset = function (offset, callback) {
+        if (offset || offset === 0) {
+            $('html, body').animate({
+                scrollTop: offset
+            }, 600, function () {
+                if (callback) {
+                    callback();
+                }
+            });
+            changePageNumber(pageNumberLookupByOffset[offset]);
+        }
+    };
+
+    var contentsList = document.getElementById('contents-list');
+
+    // populate contents list with items that link to their associated pages
+    var switchPageNumberSwitchingBackOn = function () {
+        disablePageNumberChange = false;
+    };
+    Array.prototype.forEach.call(document.getElementsByClassName('page'), function (pageDiv, index) {
+        var pageNumber = index + 1;
+        var listItem = document.createElement('li');
+        listItem.innerHTML = pageNumber + ' : ' + pageDiv.getAttribute('data-name');
+        listItem.classList.add('contents-list-item');
+        listItem.addEventListener('click', function () {
+            changePageNumber(pageNumber);
+            disablePageNumberChange = true;
+            jumpToOffset(offsetLookupByPageId[pageDiv.id], switchPageNumberSwitchingBackOn);
+        }, false);
+        listItems.push(listItem);
+        contentsList.appendChild(listItem);
+    });
+    listItems[0].classList.add('current');
+
+
+
+
     var jumpToClosestPage = function (direction) {
         var jumpIndex = determineJumpIndex(direction);
         var jumpYValue = jumpPoints[jumpIndex];
-        if (jumpYValue || jumpYValue === 0) {
-            $('html, body').animate({
-                scrollTop: jumpYValue
-            }, 600);
-            changePageNumber(pageNumberLookupByOffset[jumpYValue]);
-        }
+        jumpToOffset(jumpYValue);
     };
 
     var determineJumpIndex = function (direction) {
@@ -332,6 +391,122 @@ $(function () {
 
     }
 
+
+
+
+    var getCurrentListItem = function () {
+        return document.querySelector('.contents-list-item.current');
+    };
+
+    /* add listeners to open/close menu when clicked, to disable pulsating after
+     * first opening, and to close the menu when a click happens anywhere else.
+     */
+    var menuContainer = document.getElementById('contents-menu-container');
+    var menuIcon = document.getElementById('contents-menu-icon');
+    menuIcon.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (menuContainer.classList.contains('open')) {
+            menuContainer.classList.remove('open');
+        } else {
+            menuIcon.classList.remove('awaiting-click');
+            var currentListItem = getCurrentListItem();
+            contentsList.scrollTop = currentListItem.offsetTop - ((window.innerHeight - 100) / 2);
+            menuContainer.classList.add('open');
+        }
+    }, false);
+    document.getElementById('contents-menu').addEventListener('click', function (e) {
+        e.stopPropagation();
+    }, false);
+    document.body.addEventListener('click', function () {
+        menuContainer.classList.remove('open');
+    }, false);
+
+
+
+    // set up sharing window to pop up when selected from side menu
+    var SHARE_URL_BASE = 'http://bit.ly/dsn-zine';
+
+    var LONG_URL_BASE = 'http://www.studentsdivest.org/dsn_zine_telling_stories_of_resistance';
+
+    var FACEBOOK_URL_BASE = 'https://www.facebook.com/sharer/sharer.php?u=[url]';
+
+    var TWITTER_URL_BASE = 'http://twitter.com/share?url=[url]&text=[text]';
+
+    var SAMPLE_TWEET_BASE = 'Zine Volume 1 from @StudentsDivest: [title]';
+
+    var useCurrentPage = false;
+
+    var getShareUrl = function () {
+        if (useCurrentPage) {
+            return SHARE_URL_BASE + window.location.hash;
+        }
+        return SHARE_URL_BASE;
+    };
+
+    var getLongUrl = function () {
+        if (useCurrentPage) {
+            return LONG_URL_BASE + window.location.hash;
+        }
+        return LONG_URL_BASE;
+    };
+
+    var getFacebookUrl = function () {
+        return encodeURI(FACEBOOK_URL_BASE.replace('[url]', getLongUrl()));
+    };
+
+    var getTwitterUrl = function (pageName) {
+        var simpleTitle = pageName.replace('<i>', '').replace('</i>', '');
+        var tweet = SAMPLE_TWEET_BASE.replace('[title]', simpleTitle);
+        return encodeURI(TWITTER_URL_BASE.replace('[url]', getShareUrl()).replace('[text]', tweet));
+    };
+
+    var shareUrlDiv = document.getElementById('share-window-url');
+    var pageNameDiv = document.getElementById('share-window-page-name');
+    var facebookIcon = document.getElementById('facebook-icon');
+    var twitterIcon = document.getElementById(('twitter-icon'));
+    var renderShareWindow = function () {
+        var changed = false;
+        var shareUrl = getShareUrl();
+        if (shareUrlDiv.value !== shareUrl) {
+            changed = true;
+            shareUrlDiv.value = shareUrl;
+        }
+        var pageName = getCurrentListItem().innerHTML.split(' : ')[1];
+        if (pageNameDiv.innerHTML !== pageName) {
+            changed = true;
+            pageNameDiv.innerHTML = pageName;
+        }
+        if (changed) {
+            facebookIcon.href = getFacebookUrl();
+            twitterIcon.href = getTwitterUrl(pageName);
+        }
+    };
+
+    var useCurrentPageCheckbox = document.getElementById('share-specific-page');
+    useCurrentPageCheckbox.addEventListener('change', function () {
+        useCurrentPage = useCurrentPageCheckbox.checked;
+        renderShareWindow();
+    }, false);
+
+    var shareWindowDiv = document.getElementById('share-window');
+    var shareIconDiv = document.getElementById('share-icon');
+    shareIconDiv.addEventListener('click', function () {
+        renderShareWindow();
+        menuContainer.classList.remove('open');
+        shareWindowDiv.classList.remove('hidden');
+    }, false);
+
+    var closeShareWindowDiv = document.getElementById('share-window-close');
+    closeShareWindowDiv.addEventListener('click', function () {
+        shareWindowDiv.classList.add('hidden');
+    }, false);
+
+    shareWindowDiv.addEventListener('click', function (e) {
+        e.stopPropagation();
+    }, false);
+    document.body.addEventListener('click', function () {
+        shareWindowDiv.classList.add('hidden');
+    }, false);
 
 
 

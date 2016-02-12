@@ -219,7 +219,7 @@ gulp.task('copy:misc', function () {
         // (other tasks will handle the copying of these files)
         '!' + dirs.src + '/css/main.css',
         '!' + dirs.src + '/index.html',
-        '!' + dirs.src + '/img/!(*@(.gitignore|ant-tunnel-invert-crop.svg|pipe-4.jpg))'
+        '!' + dirs.src + '/img/!(*@(.gitignore|ant-tunnel-invert-crop.svg|pipe-4.jpg|share-64-white.png|facebook-64-white.png|twitter-64-white.png))'
 
     ], {
 
