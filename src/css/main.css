@@ -133,6 +133,7 @@ img {
     font-family: Bebas, serif;
     right: -250px;
     transition: right 0.3s;
+    will-change: right;
 }
 
 .contents-menu-container.open {

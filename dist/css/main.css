@@ -141,6 +141,7 @@ img {
     right: -250px;
     -webkit-transition: right 0.3s;
     transition: right 0.3s;
+    will-change: right;
 }
 
 .contents-menu-container.open {
