@@ -407,10 +407,14 @@ $(function () {
     var menuContainer = document.getElementById('contents-menu-container');
     var menuIcon = document.getElementById('contents-menu-icon');
     var openMenu = function () {
+        if (menuContainer.classList.contains('open')) {
+            return false;
+        }
         menuIcon.classList.remove('awaiting-click');
         var currentListItem = getCurrentListItem();
         contentsList.scrollTop = currentListItem.offsetTop - ((window.innerHeight - 100) / 2);
         menuContainer.classList.add('open');
+        return true;
     };
     menuIcon.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -421,10 +425,21 @@ $(function () {
         }
     }, false);
     document.body.addEventListener('mousemove', function (e) {
-        if (e.pageX > document.body.clientWidth - 20) {
+        if (e.clientX > document.body.clientWidth - 20) {
             openMenu();
         }
-    });
+    }, false);
+    var lastTouchEvent = null;
+    var touchHandler = function (e) {
+        lastTouchEvent = e;
+    };
+    document.body.addEventListener('touchstart', touchHandler, false);
+    document.body.addEventListener('touchmove', touchHandler, false);
+    document.body.addEventListener('touchend', function (e) {
+        if (lastTouchEvent.touches.item(0).clientX > document.body.clientWidth - 50 && openMenu()) {
+            e.preventDefault();
+        }
+    }, false);
     document.getElementById('contents-menu').addEventListener('click', function (e) {
         e.stopPropagation();
     }, false);
