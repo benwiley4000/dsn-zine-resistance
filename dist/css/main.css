@@ -536,10 +536,6 @@ img {
     justify-content: space-around;
 }
 
-.content-div {
-    max-height: 100%;
-}
-
 .formicidae-head {
     display: -webkit-box;
     display: -webkit-flex;

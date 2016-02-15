@@ -21,6 +21,7 @@ $(function () {
 
 
     var allowKeyNav = false;
+    var enableContainerHeightUpdates = false;
 
 
 
@@ -112,14 +113,16 @@ $(function () {
      * the url bar and change the viewport size sporadically, prompting
      * position jump.
      */
-    updateContainerHeights();
-    toRunOnResize.push({
-        fn: updateContainerHeights,
-        mustChange: {
-            width: true,
-            height: false
-        }
-    });
+    if (enableContainerHeightUpdates) {
+        updateContainerHeights();
+        toRunOnResize.push({
+            fn: updateContainerHeights,
+            mustChange: {
+                width: true,
+                height: false
+            }
+        });
+    }
 
 
 
