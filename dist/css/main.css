@@ -137,7 +137,6 @@ img {
 .contents-menu-container {
     position: fixed;
     z-index: 10;
-    font-family: Bebas, serif;
     right: -250px;
     -webkit-transition: right 0.3s;
     transition: right 0.3s;
@@ -205,6 +204,7 @@ img {
 }
 
 .contents-menu {
+    font-family: Bebas, serif;
     width: 250px;
     float: left;
     color: #fff;
@@ -257,7 +257,7 @@ img {
 }
 
 .contents-list-item {
-    padding: 10px 0 4px 12px;
+    padding: 7px 0 7px 12px;
     cursor: pointer;
     margin-bottom: 9px;
     margin-right: 12px;
