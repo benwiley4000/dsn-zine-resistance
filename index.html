@@ -1,0 +1,773 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Telling Stories of Resistance | DSN Zine #1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Playfair+Display'>
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script>
+            // Picture element HTML5 shiv
+            document.createElement( "picture" );
+        </script>
+        <script src="https://cdn.rawgit.com/scottjehl/picturefill/master/dist/picturefill.min.js" async></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="contents-menu-container" class="contents-menu-container">
+            <div id="contents-menu-icon" class="contents-menu-icon awaiting-click"></div>
+            <div id="contents-menu" class="contents-menu">
+                <h2 class="contents-menu-header">
+                    <span>Contents</span>
+                    <div id="share-icon" class="share-icon ready" title="Share">
+                        <img src="img/share-64-white.png">
+                    </div>
+                </h2>
+                <ul id="contents-list" class="contents-list"></ul>
+                <div class="contents-menu-footer-link">
+                    <a title="mayasmcdonnell@gmail.com" href="mailto:mayasmcdonnell@gmail.com">Order a physical copy</a>
+                </div>
+                <div class="contents-menu-footer-link">
+                    <a href="http://studentsdivest.org/">Back to studentsdivest.org</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="share-window" class="share-window hidden">
+            <h3 class="share-window-header">Share this Zine with your friends!</h3>
+            <input id="share-window-url" class="share-window-url" type="text"/>
+            <div><label>
+                <input id="share-specific-page" type="checkbox"/>
+                Share the current page (<span class="share-page-name" id="share-window-page-name"></span>).
+            </label></div>
+            <div class="social-icons">
+                <a id="facebook-icon" class="social-icon facebook-icon" href="#" target="_blank" title="Share to Facebook">
+                    <img src="img/facebook-64-white.png" alt="Share to Facebook"/>
+                </a>
+                <a id="twitter-icon" class="social-icon twitter-icon" href="#" target="_blank" title="Share to Twitter">
+                    <img src="img/twitter-64-white.png" alt="Share to Twitter"/>
+                </a>
+            </div>
+            <p id="share-window-close" class="share-window-close">Close</p>
+        </div>
+
+        <div id="page-number" class="page-number"></div>
+
+        <div id="controls-prompt" class="controls-prompt">
+            <span class="controls-prompt-text">Use</span>
+            <span class="key space">space</span>
+            <span class="key arrow">&uarr;</span>
+            <span class="key arrow">&darr;</span>
+            <span class="controls-prompt-text">to scroll.</span>
+        </div>
+
+        <div class="background-image-wrapper">
+            <div id="front-cover" class="front-cover page full-section-exact" data-name="Front Cover">
+                <div class="front-cover-title">
+                    <h2>Telling Stories of</h2>
+                    <h1>Resistance</h1>
+                </div>
+                <div class="zine-title"><h2>Fossil Fuel Divestment Student Network Zine</h2></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="formicidae" class="formicidae page full-section" data-name="Formicidae">
+            <div class="column-content-container separated-content-divs">
+                <div class="content-column formicidae-pt1">
+                    <div class="content-div">
+                        <div class="formicidae-head">
+                            <h1>Formicidae</h1>
+                            <h2>(aka ants)</h2>
+                        </div>
+                        <p>There are 12,000 species but they are all in one family.</p>
+                        <p>Alone, they are measly things. But together, they move<br>
+                            more earth than any other organism on this planet.</p>
+                        <p>They do not refuse aid. If an ant is hungry and there is no<br>
+                            food, another ant will regurgitate to feed it.</p>
+                        <p>This is not out of sympathy, nor is it a donation. It is action<br>
+                            rooted in the understanding that they are strongest when they<br>
+                            build, survive, and resist together.</p>
+                        <img src="img/antz_1x.jpg" srcset="img/antz_2x.jpg 2x" alt="Ants digging tunnels">
+                    </div>
+                </div>
+                <div class="content-column formicidae-pt2">
+                    <div class="content-div">
+                        <p>“But it is not love and not even sympathy upon which Society is<br>
+                        based in mankind. It is the conscience—but only at the stage<br>
+                        of an instinct—of human solidarity.”</p>
+                        <p>P. Kropotkin, Mutual Aid.</p>
+                    </div>
+                    <div class="content-div">
+                        <div><a href="http://studentsdivest.org/" target="_blank">www.studentsdivest.org</a></div>
+                        <div><a href="https://twitter.com/studentsdivest/" target="_blank">@StudentsDivest</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="introduction" class="introduction page full-section" data-name="Intro/Credits">
+            <div class="column-content-container">
+                <div class="content-column introduction-welcome">
+                    <div class="content-div">
+                        <div class="introduction-resistance">
+                            <h1 class="introduction-head">Resistance</h1>
+                            <p>The theme of this issue is resistance.<br>
+                                How do we resist? How can resistance<br>
+                                inspire us? How can resistance heal us?<br>
+                                How do we turn day to day resistance<br>
+                                into a movement?</p>
+                            <p>In this movement, we talk a<br>
+                                lot about narrative. Here, we<br>
+                                place ourselves within that<br>
+                                narrative. In some ways, a<br>
+                                movement is just a group of<br>
+                                humans telling a new story.<br>
+                                Here are some of ours.</p>
+                        </div>
+                        <div class="introduction-contributors">
+                            <p>Contributors: Carolina Arias,<br>
+                                Garrett Blad, Abby Cunniff,<br>
+                                Morgan Curtis, Alexandra<br>
+                                Griffin, Trisha Hautea, Yin<br>
+                                Htin, Maya McDonnell,<br>
+                                Michaela Steiner,<br>
+                                Amy Wang.</p>
+                            <p>Cover art by Sam Ho and<br>
+                                Catherine Walsh. Words by<br>
+                                Maya McDonnell.</p>
+                            <p>Web coding and layout by Ben Wiley.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-column introduction-credit">
+                    <div class="content-div">
+                        <img class="power-rose" src="img/power-rose_1x.jpg" srcset="img/power-rose_2x.jpg 2x" alt="Power rose">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-section carolina-poems">
+            <div id="mother-tell-me" class="mother-tell-me page" data-name="Mother, Tell Me a Story">
+                <div class="column-content-container">
+                    <div class="content-column mother-tell-me-english">
+                        <div class="content-div">
+                            <h1 class="mother-tell-me-head">
+                                Mother, tell me<br>
+                                a story.
+                            </h1>
+                            <h3 class="byline">by Carolina Arias</h3>
+                            <p>Tell me what los gringos said<br>
+                                at the sight of your hair tangled<br>
+                                with the stories of many years,<br>
+                                when they saw the soil<br>
+                                of our ancestors painted on your nails<br>
+                                and the color of your kitchen<br>
+                                kissing your lips.</p>
+                            <p>What did they think<br>
+                                when the herbs of your medicine<br>
+                                invited Pacha Mama's spirits<br>
+                                to dine with us?<br>
+                                What did they hear<br>
+                                when you opened your mouth<br>
+                                and offered a sea of<br>
+                                a thousand sighing fish?</p>
+                            <p>You are a savage in their eyes,<br>
+                                you touched fear in every cell<br>
+                                and buttered doubt on their skin.</p>
+                            <p>That is why you are caged.</p>
+                            <p>Poor ignorant gringos,<br>
+                                they don't know.<br>
+                                Your power is stronger than bars.</p>
+                        </div>
+                    </div>
+                    <div class="content-column mother-tell-me-spanish">
+                        <div class="content-div">
+                            <h1 class="mother-tell-me-head">
+                                Madre, cu&#233;ntame<br>
+                                una historia.
+                            </h1>
+                            <p>Cu&#233;ntame lo que te dijeron los gringos<br>
+                                al ver tu cabello enredado<br>
+                                con las historias de mil a&#241;os,<br>
+                                cuando vieron la tierra de nuestros<br>
+                                ancestros pintando tus u&#241;as<br>
+                                y los colores de tu cocina<br>
+                                besando tus labios.</p>
+                            <p>&#191;Qu&#233; pensaron cuando<br>
+                                las hierbas de tu medicina<br>
+                                invitaron los esp&#237;ritus<br>
+                                de la Pacha Mama<br>
+                                a cenar con nosotros?<br>
+                                &#191;Qu&#233; escucharon cuando<br>
+                                abriste tu boca<br>
+                                y se ofreci&#243; un mar<br>
+                                de mil peces suspirando?</p>
+                            <p>Te vieron salvaje,<br>
+                                les tocaste terror en cada c&#233;lula<br>
+                                y les untaste inseguridad<br>
+                                en la piel.</p>
+                            <p>Por eso te enjualaron.</p>
+                            <p>Pobres gringos ignorantes.<br>
+                                No entienden que tu poder<br>
+                                es m&#225;s fuerte que las barras.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="resistance" class="resistance page" title="Zapatista Women, Ana Tijou X, Rigoberta Mench&#250;, Mirabel Sisters, Juana Azurduy" data-name="Resistance">
+                <div class="resistance-women">
+                    <picture>
+                        <source
+                                media="(min-width: 481px)"
+                                srcset="img/resistencia-women-medium_1x.png 1x, img/resistencia-women-medium_2x.png 2x">
+                        <source
+                                media="(min-width: 400px)"
+                                srcset="img/resistencia-women-small_1x.png 1x, img/resistencia-women-small_2x.png 2x">
+                        <img
+                                src="img/resistencia-women-small_1x.png"
+                                alt="Zapatista Women, Ana Tijou X, Rigoberta Mench&#250;, Mirabel Sisters, Juana Azurduy">
+                    </picture>
+                </div>
+                <div class="column-content-container">
+                    <div class="content-column resistance-english">
+                        <div class="content-div">
+                            <h1 class="resistance-head">Resistance</h1>
+                            <h3 class="byline">by Carolina Arias</h3>
+                            <p>Resistance tastes like dark chocolate,<br>
+                                bitter, strong, but sweetened<br>
+                                with the hope of a just victory.</p>
+                            <p>Resistance is the forest's song,<br>
+                                millions of furiously joyous voices<br>
+                                building a rhythm for the future.</p>
+                            <p>Resistance is a scratch on soft skin,<br>
+                                sharp nail against a white body<br>
+                                dependent on the shade.</p>
+                            <p>Resistance is freedom.</p>
+                        </div>
+                    </div>
+                    <div class="content-column resistance-spanish">
+                        <div class="content-div">
+                            <h1 class="resistance-head">Resistencia</h1>
+                            <p>La Resistencia sabe a chocolate oscuro,<br>
+                                amargo, fuerte, pero azucarado<br>
+                                con la espenranza de una victoria justa.</p>
+                            <p>La Resistencia es el canto de un bosque,<br>
+                                mil voces furiosamente alegres,<br>
+                                creando ritmo para el futuro.</p>
+                            <p>La Resistencia es un ragu&#241;o en piel suave,<br>
+                                u&#241;a fuerte contra un cuerpo blanco<br>
+                                acostumbrado a la sombra.</p>
+                            <p>Resistencia es libertad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="thoughts-masters-house" class="full-section thoughts-masters-house page" data-name="Thoughts on <i>Inheriting and Resisting the Master's House</i>">
+            <div class="thoughts-masters-house-body">
+                <picture>
+                    <source
+                            media="(min-width: 1281px)"
+                            srcset="img/thoughts-masters-house-p1-xlarge_1x.jpg 1x, img/thoughts-masters-house-p1-xlarge_2x.jpg 2x">
+                    <source
+                            media="(min-width: 801px)"
+                            srcset="img/thoughts-masters-house-p1-large_1x.jpg 1x, img/thoughts-masters-house-p1-large_2x.jpg 2x">
+                    <source
+                            media="(min-width: 481px)"
+                            srcset="img/thoughts-masters-house-p1-medium_1x.jpg 1x, img/thoughts-masters-house-p1-medium_2x.jpg 2x">
+                    <source
+                            media="(min-width: 400px)"
+                            srcset="img/thoughts-masters-house-p1-small_1x.jpg 1x, img/thoughts-masters-house-p1-small_2x.jpg 2x">
+                    <img
+                            src="img/thoughts-masters-house-p1-medium_1x.jpg"
+                            alt="Thoughts on inheriting and resisting - The Master's House -C.D.
+
+Excerpts from: Federici, Silvia. Caliban and the Witch. New York: Autonomedia, 2004. Print.
+
+Excerpt:
+
+The criminalization of women's control over procreation is a phenomenon whose importance cannot be overemphasized, both from the viewpoint or its effect on women and its consequences for the capitalist organization of work. As is well documented through the Middle Ages women had possessed many means of contraception, mostly consisting of herbs which turned into potions and 'pessaries' (suppositories) were used to quicken a woman's period, provoke an abortion, or create a condition of sterility.
+
+Thoughts:
+
+Since committing myself to the fight for climate justice. My parents have been going through divorce. I can't seem to separate their relationship-and the power dynamics operating within it - from the inherited structures and institutions I am resisting in hopes for a more just world.
+
+Excerpt:
+
+In Eve's herbs: A History of contraception in the West (1997), the American historian John Riddle has given us an extensive catalogue of the substances that were most used and the effects expected of them or most likely to occur. The criminalization of contraception expropriated women from this knowledge that had been transmitted from generation to gene ration, giving them some autonomy with respect to child-birth.
+
+Thoughts:
+
+Memory: My dad beckoning my mom with his finger, making disgusting kissing noises and pleading with her to 'Give him some sugar.' She refuses. He approaches her, puts his hands on her and does not leave her alone until she gives him a kiss. I say nothing.
+
+Excerpt:
+
+It appears that, in some cases, this knowledge was not lost but was only driven underground; yet when birth control again made its appearance on the social scene, contraceptive methods were no longer of the type that women could use, but were specifically created for use by men.
+
+Thoughts:
+
+Years Later, I marvel at how I never questioned the power dynamics in my parents' relationship. My dad was the tyrant of the house and I learned how to be a chameleon under his reign. I kept quiet or slipped away to my room even as he treated my mom like a doormat.
+
+Excerpt:
+
+What demographic consequences followed from this shift is a question that for the moment I will not pursue, though I refer to Riddle's work for a discussion of this matter. Here I only want to stress that by denying women control over their bodies, the state deprived them of the most fundamental condition for physical and psychological integrity and degraded maternity to the status of forced labor, in addition to confining women to reproductive work in a way unknown in previous societies.">
+                </picture>
+                <picture>
+                    <source
+                            media="(min-width: 1281px)"
+                            srcset="img/thoughts-masters-house-p2-xlarge_1x.jpg 1x, img/thoughts-masters-house-p2-xlarge_2x.jpg 2x">
+                    <source
+                            media="(min-width: 801px)"
+                            srcset="img/thoughts-masters-house-p2-large_1x.jpg 1x, img/thoughts-masters-house-p2-large_2x.jpg 2x">
+                    <source
+                            media="(min-width: 481px)"
+                            srcset="img/thoughts-masters-house-p2-medium_1x.jpg 1x, img/thoughts-masters-house-p2-medium_2x.jpg 2x">
+                    <source
+                            media="(min-width: 400px)"
+                            srcset="img/thoughts-masters-house-p2-small_1x.jpg 1x, img/thoughts-masters-house-p2-small_2x.jpg 2x">
+                    <img
+                            src="img/thoughts-masters-house-p2-medium_1x.jpg"
+                    alt="Thoughts:
+
+Memory: I am 18, and I tell my mom that I have gotten an intra-uterine device and that I am not sorry for not asking her, and dad because it is my body and I know they would have said no. My mom is quiet and I think I can see the familiar argentine catholicism tightening her lips, but she tells me that she and my dad had never used family planning. I ask her if she had wanted kids. She says no.
+
+Excerpt
+
+Looking at these phenomena from the vantage point of the present, after four centuries of capitalist disciplining of women, the answers may seem to impose themselves.
+
+Thoughts:
+
+I had a happy and privileged childhood. But I have realized that my house growing up felt like a literal version of 'The Master's House' - the term coined by Audre Lorde which refers to the interconnected systems of oppression-governed by the same capitalistic white supremacist and patriarchal rules. My mom, an immigrant woman with darker skin, suffered and resisted the most in this house.
+
+Excerpt:
+
+Though women's waged word, house work, and (paid) sexual work are still studied often in isolation from each other, we are now in a better position to see that the discrimination that women have suffered in the waged work-force has been directly rooted in their function as unpaid laborers in the home.
+
+Thoughts:
+
+Now I fight for divestment from within Yale's version of the Master's House (which deliberately emulate plantation houses from the old south) It's scary to realize that the systems in which I have always lived, loved and been inculcated actively depend - and have always depended - on violence and exploitation of most people. How do I resist all of these systems which have been so historically ordained?
+
+Excerpt:
+
+We can thus connect the banning of prostitution and the expulsion of women from the organized workplace with the creation of the housewife and the reconstruction of the family as the locus for the production of labor-power...' 'Soon all female work if done in the home, was defined as 'housekeeping', and even when done outside the home it was paid less than men's work, and never enough for women to be able to live by it.
+
+Thoughts:
+
+My mom left my dad this past summer. She left a note. My dad didn't see it coming. After thirty years of treating my mom like shit he realizes how lucky he was.  My mom has broken away from a long historical lineage of female subordination and oppression.
+
+Excerpt:
+
+Marriage was now seen as a woman's true career and women's inability to support themselves was taken so much for granted, that when a single woman tried to settle in a village, she was driven away even if she earned a wage. Combined with land dispossession, this loss of power with regard to wage employment led to the massification of prostitution.
+
+Thoughts:
+
+My dad has since stopped drinking. He started running and doing yoga. What? yes. He says he wants to transition into living 'leading with the heart' now. While I am not still convinced he sees my mom as a real person yet, I have never been so disoriented by-or close with-my dad.
+
+My mom's resistance and my dad's heart give me strength, clarity and hope to ask the big questions. How do we make a just transition into a new economy, a new world, with the work of love and not violence how do I reconcile my love for my dad with my anger at the master's house?">
+                </picture>
+            </div>
+        </div>
+
+        <div class="background-image-wrapper">
+            <div id="yin-interview" class="full-section yin-interview page" data-name="Interview: Yin Htin">
+                <div class="yin-interview-body">
+                    <p class="yin-interview-intro">
+                        Yin Htin is a climate justice organizer with Fossil Free
+                        SFSU and the Divestment Student Network. Currently a
+                        senior at San Francisco State University, Yin is an
+                        international student from Burma who first came to the
+                        U.S. alone at the age of 17. This past summer, she worked
+                        as a Fossil Free Fellow at the Asian Pacific Environmental
+                        Network (APEN) in Richmond, CA. With APEN, Yin facilitated
+                        political education and leadership development workshops
+                        for community members, helped organize the Richmond Our
+                        Power Festival, and attended Bay Area Air Quality
+                        Management Board (BAAQMD) meetings to push for stronger
+                        air quality controls on Richmond's Chevron refinery.
+                    </p>
+                    <p><strong>Amy: From your experience working with APEN, what purpose
+                        would you say the organization serves in the communities
+                        it organizes?</strong></p>
+                    <p>Yin: APEN is a community organization in Richmond and
+                        Oakland that really works to create a just transition away
+                        from our current exploitative economy towards smaller,
+                        local economies that actually care about people and not
+                        just profit. The organization does focus on environmental
+                        justice, but I was really grateful to see that they're not
+                        just fighting for the environment but for all social justice
+                        issues, including racial justice and housing justice.</p>
+                    <p><strong>A: Was this your first time working in a frontline community?</strong></p>
+                    <p>Y: Yes, it was!</p>
+                    <p><strong>A: How did organizing with members of frontline communities
+                        change the way you approach your divestment work?</strong></p>
+                    <p>Y: Working with APEN really gave me new perspective on the
+                        meaning of climate justice&mdash;though APEN doesn't center
+                        divestment, it really does focus on just transition and
+                        reinvestment, which are both important next steps towards
+                        climate justice after we win divestment. It also made me
+                        think differently about building power and creating change,
+                        like I really liked how APEN works at all levels of power,
+                        from doing leadership development within the community to
+                        mobilizing members to lobby California state legislators. They
+                        aren't just trying to make change in the boardroom like a lot
+                        of divestment campaigns do, but they're actually empowering
+                        community members. Through my organizing, I've been able to
+                        understand how important it is to show people that they have
+                        the power to fight injustice, even if they've been disempowered
+                        their entire lives.</p>
+                    <p><strong>A: What was your experience entering and working in a community
+                        that was so new to you?</strong></p>
+                    <p>Y: At APEN, even though we were organizing around pan-Asian
+                        solidarity, I still saw myself as different from the community
+                        members. They were majority Chinese immigrants, with some Mien
+                        and Laotian refugees, but there was nobody from Burma. I don't
+                        think I had a very strong relationship to any of the community
+                        members because I didn't speak their languages, but I really
+                        enjoyed working with them during political education workshops
+                        at APEN academy and other events like the Our Power Festival!</p>
+                    <p><strong>A: Did APEN's explicit focus on racial justice change the way you
+                        see climate justice or organizing?</strong></p>
+                    <p>Y: Definitely. I hadn't thought much about race when I started
+                        divestment organizing, but since being in spaces for people of
+                        color at APEN and the DSN and fellowship POC Caucuses, I've
+                        realized how few people of color there are in divestment work.
+                        Being in these spaces has helped me open up and share more about
+                        the ways I've felt different or insecure about my race and
+                        certain cultural differences. It also taught me about how
+                        important it is to organize low-income communities of color,
+                        which are most vulnerable to climate change but have so much
+                        power to push the just transition forward.</p>
+                    <p><strong>A: We've talked a lot about how your experiences organizing in
+                        the U.S. have affected how you relate to climate justice, but
+                        I'm curious to know if your experience growing up in Burma also
+                        motivated you to do climate justice work?</strong></p>
+                    <p>Y: Yeah, Burma has suffered a lot from both environmental
+                        injustice and climate change. Recently, there was heavy flooding
+                        across the country, where almost two-thirds of the country
+                        experienced flooding, and a lot of people died. One of the main
+                        reasons for this flooding was that the Burmese government
+                        started cutting down rainforests to export the timber to China.
+                        With all of the deforestation, there's no more natural barrier
+                        to storms, and scientists say that, because of climate change,
+                        we should expect these storms to get more and more intense in
+                        the future. China also has plans to build a dam on our largest
+                        river, which would displace all of the local people in the area.
+                        For now, the government's stopped dam construction, but they
+                        still have a contract to move forward with the project. When I
+                        think about Burma, I really see the need for people to rise up
+                        and fight back against injustice. </p>
+                    <p><strong>A: What are some challenges of organizing people in Burma?</strong></p>
+                    <p>Y: The political situation in Burma right now is really difficult.
+                        I have a lot of hope for the climate justice movement in the
+                        U.S., especially after meeting so many incredible people here
+                        who are devoting their lives to the movement, but in Burma,
+                        people are too scared of challenging the government to really
+                        organize. On Facebook, I'll post about the upcoming Burmese
+                        elections or about injustice in my country, and I'll have
+                        friends and family members tell me to stop. They think that the
+                        government could be monitoring me, and that they might even
+                        throw me in jail when I get back. I understand where they're
+                        coming from, because I grew up in the same culture of fear&mdash;
+                        like when I was young, all my parents would ever say about the
+                        government is that there's nothing to be done because they're
+                        too powerful. I know that's not true, and we have the power to
+                        fight back, but I do think that the current government makes it
+                        very dangerous.</p>
+                    <p><strong>A: You're currently in your senior year at SFSU&mdash;do you
+                        know where you want to live post-graduation?</strong></p>
+                    <p>Y: I think it really depends on how the upcoming elections in
+                        Burma go, because I really don't trust the current government
+                        and that's partly why I came to the U.S. If the political
+                        situation gets better, I want to go back to my country to
+                        organize the people there, but if I can get a work permit, I
+                        would love to continue organizing for climate justice in the
+                        U.S. Recently, I've thought a lot about how everywhere I've
+                        been&mdash;even democratic countries like the U.S.&mdash;
+                        there's always injustice and people who are doing nothing
+                        about it because they don't think they have the power to
+                        fight back. It makes me really emotional, but it also makes
+                        me resilient. We're the generation that has no choice but to
+                        fight injustice. And we have to fight back.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="reverberations" class="full-section reverberations page" data-name="Reverberations">
+            <div class="column-content-container separated-content-divs">
+                <div class="content-column">
+                    <div class="content-div">
+                        <h1 class="reverberations-head">Reverberations</h1>
+                        <h3 class="byline">doodles by Abby Cunniff</h3>
+                    </div>
+                    <div class="content-div rockaway-wildfire">
+                        <img src="img/rockaway-wildfire_1x.jpg" alt="Solid as a rock, rooted as a tree, I am here, standing strong, in my rightful place.">
+                        <p>Rockaway Wildfire</p>
+                    </div>
+                    <div class="content-div nelini-stamp">
+                        <img src="img/nelini-stamp_1x.jpg" alt="Why are we in this situation, in this situation that brings us down? Can't you see we are losing patience, we are lsoing patience with oppression now? The people will rise (x6)">
+                        <p>Nelini Stamp</p>
+                    </div>
+                </div>
+                <div class="content-column">
+                    <div class="content-div ellas-song">
+                        <img src="img/ellas-song_1x.jpg" alt="We who believe in freedom CANNOT REST until it's won.">
+                        <p>Ella's Song by Sweet Honey in the Rock</p>
+                    </div>
+                    <div class="content-div luke-nephew">
+                        <img src="img/luke-nephew_1x.jpg" alt="People gonna RISE like the water, gonna calm this crisis down. I hear the voice of my great granddaughter, sayin shut down wall street NOW.">
+                        <p>written by Luke Nephew (Peace Poets) for Flood Wall Street</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column-content-container separated-content-divs">
+                <div class="content-column">
+                    <div class="content-div get-equal">
+                        <img src="img/get-equal_1x.jpg" alt="I am SOMEBODY and I deserve full equality right here RIGHT NOW.">
+                        <p>Get Equal</p>
+                    </div>
+                    <div class="content-div umi-selah">
+                        <img src="img/umi-selah_1x.jpg" alt="They told us it was over, they told us the world gets colder, they told us too much on our shoulders, we believe that we will win..">
+                        <p>Umi Selah (Dream Defenders)</p>
+                    </div>
+                </div>
+                <div class="content-column">
+                    <div class="content-div king-kunta">
+                        <img src="img/king-kunta_1x.jpg" alt="I'm MAD but I ain't stressing.">
+                        <p>King Kunta by Kendrick Lamar</p>
+                    </div>
+                    <div class="content-div darkmatter">
+                        <img src="img/darkmatter_1x.jpg" alt="Do we want to make more feminists or DESTROY the patriarchy?">
+                        <p>Darkmatter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="look-over-here" class="look-over-here page image-feature" data-name="look over here">
+            <div class="look-over-here-info">
+                “look over here”<br>
+                by Garrett Blad
+            </div>
+            <picture>
+                <source
+                        media="(min-width: 1281px)"
+                        srcset="img/look-over-here-xlarge_1x.jpg 1x, img/look-over-here-xlarge_2x.jpg 2x">
+                <source
+                        media="(min-width: 801px)"
+                        srcset="img/look-over-here-large_1x.jpg 1x, img/look-over-here-large_2x.jpg 2x">
+                <source
+                        media="(min-width: 481px)"
+                        srcset="img/look-over-here-medium_1x.jpg 1x, img/look-over-here-medium_2x.jpg 2x">
+                <source
+                        media="(min-width: 400px)"
+                        srcset="img/look-over-here-small_1x.jpg 1x, img/look-over-here-small_2x.jpg 2x">
+                <img
+                    src="img/look-over-here-small_1x.jpg"
+                    alt="'Look Over Here' by Garrett Blad">
+            </picture>
+        </div>
+
+        <div class="full-section trisha-untitled">
+            <div id="trisha-untitled" class="trisha-untitled page" data-name="Untitled by Trisha Hautea">
+                <div class="trisha-untitled-body">
+                    <p style="color:#5f5f5f">
+                        The white boy told me that he should be in front. He told me, "Well we're trying to serve as barriers from the police! We [white allies] should be in the front!<br/>
+                        We're protecting people. We need to be in the front!"<br/>
+                        I asked him if he didn't realize how problematic that statement was coming from him.<br/>
+                        And if he couldn't see his white savior complex perspective. [He wasn't asked to stand in front]<br/>
+                        I'm here to save you because you're so helpless. You need me. <br/>
+                        The martyr mentality is so prevalent in activist spheres.<br/>
+                    </p>
+                    <p style="font-size:1.4em">
+                        There's a way to be an ally without taking the voice away from those who were (and are) actually aggrieved.<br/>
+                    </p>
+                    <p style="font-size: 1.3em;color:#8f8f8f;padding-left:4em">
+                        Pushing buttons makes one cede their privilege, which is what the so-called "white allies" didn't want.<br/>
+                        Classic "have your cake and eat it too" syndrome.<br/>
+                    </p>
+                    <p>
+                        They were afraid of what others would think if they spoke up, so who cares if we push buttons?<br/>
+                        Isn't that the point? It's so easy to feel good about yourself and say you're participating yet being able to hide it when it's convenient: being able to say you want to talk about issues and backing away when it comes to truly confronting it. <br/>
+                    </p>
+                    <p style="font-size: 1.1em;color:#8f8f8f">
+                        The issue of race and white privilege may make you upset. <br/>
+                        You can show up to protests, or be part of the same type of collective that attempts to talk about the very issue of race.<br/>
+                        It won't affect you because the problem isn't in front of you.<br/>
+                        You didn't witness or experience violence.<br/>
+                    </p>
+                    <p style="font-size: 1.2em;padding-left:2em">
+                        You weren't dehumanized.<br/>
+                        You don't have a child who was left to bleed or (unjustly) shot multiple times<br/>
+                        Simply because of the color of the skin he was born in.<br/>
+                        Your body will never be criminalized.<br/>
+                        You haven't seen people you love lose their lives<br/>
+                        From unnecessary violence and animosity.<br/>
+                    </p>
+                    <p style="font-size: 1.05em;color:#8f8f8f;padding-left:2em">
+                        That's not to say that some of us haven't either...but this is an issue that needs to be spoken about because everyone deserves the right to life, equality, and justice.<br/>
+                    </p>
+                    <p style="font-size: 1.05em">
+                        We need to talk about those who have been forgotten and disregarded as human beings<br/>
+                        Who have lost their lives to corruption, hatred, and racism. <br/>
+                        We cannot allow it to happen any longer.<br/>
+                    </p>
+                    <p style="font-size: 1.3em">
+                        We shouldn't be afraid to speak and raise the volume around campuses<br/>
+                        About the issues that exist. We cannot be afraid because someone will get their feelings hurt.<br/>
+                        You shouldn't give yourself brownie points for being a decent person.<br/>
+                    </p>
+                    <p style="font-size: 1.05em;">
+                        It goes beyond "being aware" of one's privilege. It's about listening. It's about understanding. <br/>
+                        Learning to be a proper "ally," standing behind, raising the voices of black people of color, and not allowing your voice to drown out those who need to be heard.<br/>
+                    </p>
+                    <div style="display: flex;justify-content: flex-end">
+                        <p style="text-align: center; display:inline-block;color: #8f8f8f">
+                            Remember<br/>
+                            "All lives matter" = "White lives matter"<br/>
+                            Society knows this.<br/>
+                            We don't need to be reminded.<br/>
+                        </p>
+                    </div>
+                    <p style="color: #8f8f8f">
+                        By Trisha Hautea<br/>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="background-image-wrapper">
+            <div id="micha-untitled" class="micha-untitled page full-section" data-name="Untitled by Michaela Steiner">
+                <div class="column-content-container">
+                    <div class="content-column text-box">
+                        <div class="content-div">
+                            <p>Academic direction, a test in surrender<br>
+                                imprints itself on my gender.<br>
+                                Crimson check marks inducing fixed scars,<br>
+                                the elasticity of hegemony keeps resistance in bars.<br>
+                                It seeps in through the cracks of curriculum,<br>
+                                A study in uniformity, capitalism blows mind loopholes on a replay continuum.<br>
+                                We will grow through the breaks,<br>
+                                Opening our souls to buried histories at stake.<br>
+                                implanted in the namelessness of silence, we will unearth violations of being.<br>
+                                We will speak our truths and feel our thoughts freeing.<br>
+                                Our hearts beating,<br>
+                                to the tick tock of a curative repeating.</p>
+                        </div>
+                    </div>
+                    <div class="content-column byline-box">
+                        <div class="content-div">
+                            <p class="byline">
+                                words: Michaela Steiner<br>
+                                illustration: Trisha Hautea
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="on-sale" class="on-sale page image-feature" data-name="On Sale">
+            <picture>
+                <source
+                        media="(min-width: 1281px)"
+                        srcset="img/on-sale-xlarge_1x.jpg 1x, img/on-sale-xlarge_2x.jpg 2x">
+                <source
+                        media="(min-width: 801px)"
+                        srcset="img/on-sale-large_1x.jpg 1x, img/on-sale-large_2x.jpg 2x">
+                <source
+                        media="(min-width: 481px)"
+                        srcset="img/on-sale-medium_1x.jpg 1x, img/on-sale-medium_2x.jpg 2x">
+                <source
+                        media="(min-width: 400px)"
+                        srcset="img/on-sale-small_1x.jpg 1x, img/on-sale-small_2x.jpg 2x">
+                <img
+                        src="img/on-sale-small_1x.jpg"
+                        alt="'On Sale' by Alexandra Griffin">
+            </picture>
+            <div class="on-sale-info">
+                by Alexandra Griffin
+            </div>
+        </div>
+
+        <div class="last-section-and-footer-wrapper background-image-wrapper">
+
+            <div id="oil-runs-thicker" class="full-section oil-runs-thicker page" data-name="Oil Runs Thicker">
+                <div class="oil-runs-thicker-head">
+                    <picture>
+                        <source
+                                media="(min-width: 1281px)"
+                                srcset="img/oil-runs-thicker-morgan-xlarge_1x.png 1x, img/oil-runs-thicker-morgan-xlarge_2x.png 2x">
+                        <source
+                                media="(min-width: 801px)"
+                                srcset="img/oil-runs-thicker-morgan-large_1x.png 1x, img/oil-runs-thicker-morgan-large_2x.png 2x">
+                        <source
+                                media="(min-width: 481px)"
+                                srcset="img/oil-runs-thicker-morgan-medium_1x.png 1x, img/oil-runs-thicker-morgan-medium_2x.png 2x">
+                        <source
+                                media="(min-width: 400px)"
+                                srcset="img/oil-runs-thicker-morgan-small_1x.png 1x, img/oil-runs-thicker-morgan-small_2x.png 2x">
+                        <img
+                                src="img/oil-runs-thicker-morgan-small_1x.png"
+                                alt="'Oil Runs Thicker' by Morgan Curtis">
+                    </picture>
+                </div>
+                <div class="oil-runs-thicker-body">
+                    <p>“What is your purpose for visiting Canada?” the border officer had queried on the far side of the arching bridge from Lubec, Maine to Campobello Island, New Brunswick. “We’re on this bicycle tour,” I responded, squirming within my signposted responsibility to answer fully and accurately to all required questions. “I wonder what we should have said,” Garrett pondered, as we pedaled away. “That we are here to dismantle the white supremacist capitalist patriarchy?” I laughed.</p>
+                    <p>Crossing the Courtenay Bay Causeway in Saint John, New Brunswick the following day the largest oil refinery in Canada loomed to our left, while tanker ships, oil trains and a selection of million-gallon tanks were sat along the sedated shoreline to our right. The blue lettering on each tank read Irving, our first glimpse of a family name that would haunt our coming days. The lettering on my bike jersey reminded me to keep pedalling for the planet. I took a wide right turn onto Bayside Drive and shivered to pass a sign denoting Irving Industrial Security. I felt watched.</p>
+                    <p>“One in seven New Brunswickers work for Irving,” Lynaya filled us in as we drove back along the coast towards the city from her home on Red Head Road, opposite Transcanada’s chosen terminus for Energy East, the largest oil pipeline to ever be proposed in North America. “My brothers-in-law do. They have to sign contracts that they won’t speak or act against the interest of the corporation. I know other activists whose family won’t be seen with them for fear of losing their jobs.” The dense industrial infrastructure was speeding past us now. High locked gates. Blinking lights on assorted towers. Oversized machinery. An unlikely deer inside a chainlink fence, resilient behind an array of warning signs.</p>
+                    <p>I couldn’t quite manage a smile as the camera flashed. I was holding a sign reading, simply, 47. The number of people killed in the Lac Megantic oil train explosion in Quebec. On the disaster’s two year anniversary Lynaya had gathered the small community willing to speak the necessary truth. We were still in our damp bike shorts, stood amongst retirees, Red Head homeowners, a businessman or two, as well as a documentary film crew, also recently arrived in Saint John to listen to frontline stories of fossil fuel resistance for their upcoming film Directly Affected. In the background were oil trains, hundreds of carriages long, each carrying nearly 30,000 gallons of crude or, worse, diluted bitumen from the tar sands. </p>
+                    <p>“I had a woman from Transcanada sitting at my kitchen table. The first thing she said to me coldly was ‘we are not interested in buying any more property.’ So I figured I would just have to stay here then.” Lynaya explained, when I asked how it was she came to be involved with all of this. “It was then that I started reading all about climate change and realized how much bigger this was than Red Head. I now think it was fate that put me here to fight this.” She kept her eye on the road, navigating her beloved hybrid car through downtown traffic. “I want to be able to look my two nieces in the eye in twenty years and tell them that I did absolutely everything I could.”</p>
+                    <p>The function room in the chain hotel was overly air conditioned, and the five filmmakers were sat facing the small audience. We watched a short version of their film: a story of the people impacted by Kinder Morgan's proposed Trans Mountain Pipeline expansion. The story of Energy East is to be added, hence their cameras greeting us as we pedaled into Lynaya’s driveway earlier that day. A man sitting in my row of plastic seats introduced himself. He lives off-grid, without a car, and had got a ride from a friend to attend the screening. He’s proposing a census boycott to deprive the provincial government of federal funding, hoping that resistance spoken in their language will finally be heard.</p>
+                    <p>“I’m a bladder cancer patient,” spoke up one woman. “My doctor tells me almost all bladder cancers are rooted in cadmium exposure from smoking cigarettes. My fellow patients and I… not one of us are smokers.” It’s a common story, we are told. Cancer rates in Saint John are multiples of ten above national averages. Research is stifled, and awareness is nil. The Irving empire owns every single newspaper and no community health survey has ever been completed. In Burnaby, the epicenter of resistance to the Trans Mountain pipeline, they have an area they call “cancer alley”, the filmmakers share. “Here we just call it Saint John,” another woman laughs. I shift uncomfortably in my chair.</p>
+                    <p>I get to talking to the man who lives at the tip of Anthony’s Cove Road, where Energy East would end. “I saw our house many years ago and swore that I would move there if it ever came for sale. It’s that beautiful of a spot. For me that’s what this fight is about. My house, my land. If you’re looking for an environmentalist, Lynaya is the one to talk to.”I ask about the seven-hundred person strong March to the End of the Line that happened along his road just six weeks before. “It was powerful. So important that First Nations people came. That war canoe sure got people’s attention.” The Telegraph Journal that day had said they would publish Lynaya’s opinion piece about the courageous and diverse resistance to the pipeline. Instead the Irving-owned newspaper printed a full-page ad from Transcanada offering pro-Energy East yard signs. “At least I haven’t seen a single yard with one,” she consoles herself. </p>
+                    <p>Soon the seven of us travelling storytellers, both cyclists and filmmakers, were gathered for a late night meal in the home of Leticia, chair of the Saint John chapter of Council of Canadians. A refugee support coordinator, Leticia welcomed us with open arms, quesadillas and ginger beer. Conversation flowed from my question: What should we know about Canada? Hockey, oversized road art and Tim Hortons quickly passed over we dove into better understanding the regime of Prime Minister Stephen Harper. Expansion of the tar sands, fast tracking of pipelines, repealing of environmental safeguards, muzzling of scientists, tax breaks for the wealthiest industry on Earth... "When you look at the changes to law Prime Minister Harper has made in this country, it is really unsettling. Many people wonder, is this what Germany's descent into fascism felt like?" film director Zack said. "Politics are becoming very polarized; environmentalists and First Nations groups are being referred to as radicals and enemies of the state. New secret police powers have been enabled under bill C-51, all in an effort to extract more oil in the era of climate change.”</p>
+                    <p>I finally got to sleep that night on the same air mattress that Lynaya hosted organizers from 350.org on when they came for the march. “I never could have imagined meeting all of you incredible people before this,” she said. “I was a quiet person, not one to speak out. All of this came from me speaking at one neighbourhood meeting. I stood up and shared my concerns about the pipeline, and was amazed to hear that others felt the same. I now know we are all part of a global movement.”</p>
+                    <p>It was a grey day heavy with drizzle as we left Saint John. A large hole and various machinery had appeared in the field opposite Lynaya’s house overnight. As we headed back over the causeway we stopped to take pictures of the oil trains, again wearing our bike jerseys, again pedalling for the planet. Garrett’s guess was that it was illegal for us to be stood by the tracks with a camera, looking out to the cold bay with the refinery behind us. Warning: Crude Oil Pipeline signs dotted the stretch of grass we stood upon. Keep Out was the message of the gates and fence line. Another deer appeared from just beyond the border. She ran down the embankment and under the thundering bridge. Just behind her were two fawns, giddily leaping across the rail ties, playful amidst it all.</p>
+                </div>
+            </div>
+
+            <div id="footer" class="footer">
+                <p class="footer-text">
+                    <a href="http://studentsdivest.org/" target="_blank">www.studentsdivest.org</a><br>
+                    <a href="https://twitter.com/studentsdivest" target="_blank">@StudentsDivest</a><br>
+                    To order copies, contact <a href="mailto:mayasmcdonnell@gmail.com">mayasmcdonnell@gmail.com</a>
+                </p>
+            </div>
+
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.4.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!--script removed until we get around to setting up google analytics..>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script-->
+    </body>
+</html>
